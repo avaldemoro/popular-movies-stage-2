@@ -8,6 +8,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.*;
 import android.view.ViewGroup;
 import com.squareup.picasso.*;
@@ -57,7 +58,6 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> 
     @Override
     // Replace the contents of a view (Invoked by the layout manager)
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-
         Picasso.with(mContext)
                 .load(mMovies[position].getPosterPath())
                 .fit()

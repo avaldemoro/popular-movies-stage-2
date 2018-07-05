@@ -35,7 +35,7 @@ public class MovieDetails extends AppCompatActivity {
         setupDetailsUI (movie);
     }
 
-    private void closeOnError() {
+    void closeOnError() {
         finish();
         Toast.makeText(this, "Something went wrong.", Toast.LENGTH_SHORT).show();
     }

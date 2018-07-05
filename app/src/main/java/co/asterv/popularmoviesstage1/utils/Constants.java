@@ -33,6 +33,4 @@ public class Constants {
 
     /* COMMANDS */
     public final static String INTERNET_CHECK_COMMAND = "/system/bin/ping -c 1 8.8.8.8";
-
-
 }

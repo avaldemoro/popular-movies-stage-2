@@ -2,7 +2,7 @@
     <string name="app_name">Popular Movies</string>
 
     <string-array name="sort_options">
-        <item>Most Popular</item>
-        <item>Top Rated</item>
+        <item name="mostPopularOption">Most Popular</item>
+        <item name="topRatedOption">Top Rated</item>
     </string-array>
 </resources>

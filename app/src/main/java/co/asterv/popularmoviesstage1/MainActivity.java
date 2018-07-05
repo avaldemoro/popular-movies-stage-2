@@ -5,7 +5,12 @@ import co.asterv.popularmoviesstage1.utils.JsonUtils;
 import co.asterv.popularmoviesstage1.model.Movie;
 
 import android.annotation.SuppressLint;
+import android.app.LoaderManager;
+import android.content.AsyncTaskLoader;
+import android.content.Intent;
+import android.content.Loader;
 import android.os.AsyncTask;
+import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -22,54 +27,67 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.net.URL;
 
+import static android.widget.AdapterView.*;
+
 public class MainActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private RecyclerView.LayoutManager mLayoutManager;
 
     Movie[] movies;
     ImageAdapter mImageAdapter;
+    Spinner sortSpinner;
 
     @SuppressLint("WrongConstant")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate (savedInstanceState);
         setContentView (R.layout.activity_main);
+
         mRecyclerView = findViewById (R.id.recycler_view);
+        sortSpinner = findViewById(R.id.sort_spinner);
 
         // Using a Grid Layout Manager
         mLayoutManager = new GridLayoutManager(this, Constants.GRID_NUM_OF_COLUMNS);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-
-        // SPINNER METHODS
-        Spinner sortSpinner = findViewById(R.id.sort_spinner);
-        final int currentSelection = sortSpinner.getSelectedItemPosition();
-
+        // Check if online
         if (isOnline () == true) {
-            sortSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                    if (currentSelection == i) {
-                        // If most popular was selected
-                        new FetchDataAsyncTask().execute(Constants.POPULAR_QUERY_PARAM);
-                    } else {
-                        // If top rated was selected
-                        new FetchDataAsyncTask().execute(Constants.TOP_RATED_QUERY_PARAM);
-                    }
-                }
-                @Override
-                public void onNothingSelected(AdapterView<?> parent) {
-                }
-            });
+            spinnerLoad (sortSpinner);
         } else {
             Toast.makeText(getApplicationContext(), Constants.NO_INTERNET_TEXT, Constants.TOAST_DURATION).show();
         }
 
     }
 
-    /***
-     * METHOD TO MAKE STRING OF MOVIE DATA TO AN ARRAY OF MOVIE OBJECTS
-     ***/
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState (outState);
+        sortSpinner = findViewById (R.id.sort_spinner);
+        String sortSpinnerSelection = sortSpinner.getSelectedItem ().toString ();
+        outState.putString("sort_spinner_selection", sortSpinnerSelection);
 
+    }
+
+    /*** METHOD TO LOAD INFO BASED ON SPINNER SELECTION ***/
+    public void spinnerLoad(Spinner spinner) {
+        int currentSelection = spinner.getSelectedItemPosition();
+        spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                if (currentSelection == i) {
+                    // If most popular was selected
+                    new FetchDataAsyncTask().execute(Constants.POPULAR_QUERY_PARAM);
+                } else {
+                    // If top rated was selected
+                    new FetchDataAsyncTask().execute(Constants.TOP_RATED_QUERY_PARAM);
+                }
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+    }
+
+    /*** METHOD TO MAKE STRING OF MOVIE DATA TO AN ARRAY OF MOVIE OBJECTS ***/
     public Movie[] makeMoviesDataToArray(String moviesJsonResults) throws JSONException {
 
         // Get results as an array
@@ -97,10 +115,10 @@ public class MainActivity extends AppCompatActivity {
         return movies;
     }
 
-    /***
-    * FETCH MOVIE DATA ASYNC TASK
-    ***/
+    /*** LOADER MANAGER METHODS ***/
 
+
+    /*** FETCH MOVIE DATA ASYNC TASK ***/
     public class FetchDataAsyncTask extends AsyncTask<String, Void, Movie[]> {
         public FetchDataAsyncTask() {
             super();
@@ -136,11 +154,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    /***
-     * CHECKS IF ONLINE
-     * https://stackoverflow.com/questions/1560788/how-to-check-internet-access-on-android-inetaddress-never-times-out
-     ***/
-
+    /*** CHECKS IF ONLINE
+     * https://stackoverflow.com/questions/1560788/how-to-check-internet-access-on-android-inetaddress-never-times-out ***/
     public boolean isOnline() {
         Runtime runtime = Runtime.getRuntime();
         try {
