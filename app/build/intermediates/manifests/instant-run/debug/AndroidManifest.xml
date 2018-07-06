@@ -19,7 +19,9 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="co.asterv.popularmoviesstage1.MainActivity" >
+        <activity
+            android:name="co.asterv.popularmoviesstage1.MainActivity"
+            android:launchMode="singleTop" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

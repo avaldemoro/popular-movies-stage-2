@@ -1,8 +1,7 @@
 <resources>
     <string name="app_name">Popular Movies</string>
 
-    <string-array name="sort_options">
-        <item name="mostPopularOption">Most Popular</item>
-        <item name="topRatedOption">Top Rated</item>
-    </string-array>
+    <string name="most_popular_setting">Most Popular</string>
+    <string name="top_rated_setting">Top Rated</string>
+    <string name="favorites_setting">Favorite Movies</string>
 </resources>

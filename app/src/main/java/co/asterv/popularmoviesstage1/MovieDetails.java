@@ -3,8 +3,12 @@ package co.asterv.popularmoviesstage1;
 import android.content.Intent;
 import co.asterv.popularmoviesstage1.model.*;
 import android.os.Parcelable;
+import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,8 +28,13 @@ public class MovieDetails extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate (savedInstanceState);
         setContentView (R.layout.activity_movie_details);
+        android.support.v7.app.ActionBar actionBar = this.getSupportActionBar ();
+        if(actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled (true);
+        }
 
         Intent intent = getIntent();
+
         if (intent == null) {
             closeOnError();
         }
@@ -34,7 +43,13 @@ public class MovieDetails extends AppCompatActivity {
 
         setupDetailsUI (movie);
     }
-
+    public boolean onOptionsSelectedItem(MenuItem item) {
+        int id = item.getItemId ();
+        if (id == android.R.id.home) {
+            NavUtils.navigateUpFromSameTask (this);
+        }
+        return super.onOptionsItemSelected (item);
+    }
     void closeOnError() {
         finish();
         Toast.makeText(this, "Something went wrong.", Toast.LENGTH_SHORT).show();
