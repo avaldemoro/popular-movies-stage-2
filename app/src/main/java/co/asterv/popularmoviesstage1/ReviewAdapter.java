@@ -19,6 +19,7 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ViewHolder
     private Movie[] movies;
     private TextView authorTV;
     private TextView contentsTV;
+    private Context context;
 
     public ReviewAdapter(Movie[] movies) {
         this.movies = movies;
@@ -58,9 +59,8 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ViewHolder
     public void onBindViewHolder(ViewHolder holder, int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        authorTV.setText(movies[position].getReviewAuthor());
-        contentsTV.setText (movies[position].getReviewContents());
-
+        holder.authorTV.setText(movies[position].getReviewAuthor());
+        holder.contentsTV.setText (movies[position].getReviewContents());
     }
 
     // Return the size of your dataset (invoked by the layout manager)

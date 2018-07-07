@@ -56,15 +56,12 @@ public class MovieDetails extends AppCompatActivity {
 
         mRecyclerView = (RecyclerView) findViewById(R.id.reviewsRecyclerView);
 
-        // use this setting to improve performance if you know that changes
-        // in content do not change the layout size of the RecyclerView
-        mRecyclerView.setHasFixedSize(true);
-
         // use a linear layout manager
         mLayoutManager = new LinearLayoutManager (this);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         setupDetailsUI (movie);
+
     }
 
     public boolean onOptionsSelectedItem(MenuItem item) {
@@ -111,8 +108,9 @@ public class MovieDetails extends AppCompatActivity {
 
         // TRAILER BUTTON
         new TrailerButtonAsyncTask (trailerBtn).execute(String.valueOf(movie.getMovieId ()), Constants.VIDEO_QUERY_PARAM);
+        System.out.print("HELLO!!!" + movie.getMovieId ());
 
-        //new ReviewsAsyncTask ().execute(String.valueOf(movie.getMovieId ()), Constants.REVIEW_URL_QUERY_PARAM);
+        new ReviewsAsyncTask ().execute(String.valueOf(movie.getMovieId ()), Constants.REVIEW_URL_QUERY_PARAM);
     }
 
     /***
@@ -186,43 +184,39 @@ public class MovieDetails extends AppCompatActivity {
     private class ReviewsAsyncTask extends AsyncTask<String, Void, Movie[]> {
         @Override
         protected Movie[] doInBackground(String... strings) {
-            Movie[] movies = new Movie[0];
             try {
                 URL url = JsonUtils.buildMovieIdUrl(strings[0], strings[1]);
                 String movieSearchResults = JsonUtils.getResponseFromHttpUrl(url);
-
-                JSONObject root = new JSONObject(movieSearchResults);
-                JSONArray resultsArray = root.getJSONArray (Constants.RESULTS_QUERY_PARAM);
-                movies = new Movie[resultsArray.length ()];
-
-                for (int i = 0; i < resultsArray.length(); i++) {
-                    // Initialize each object before it can be used
-                    movies[i] = new Movie();
-
-                    // Object contains all tags we're looking for
-                    JSONObject movieInfo = resultsArray.getJSONObject(i);
-
-                    // Store data in movie object
-                    movies[i].setReviewAuthor (movieInfo.getString(Constants.REVIEW_AUTHOR_QUERY_PARAM));
-                    movies[i].setReviewContents (movieInfo.getString(Constants.REVIEW_QUERY_PARAM));
-                    movies[i].setReviewUrl (movieInfo.getString (Constants.REVIEW_URL_PARAM));
-                }
-
-            } catch (MalformedURLException e) {
-                e.printStackTrace ();
-            } catch (IOException e) {
-                e.printStackTrace ();
-            } catch (JSONException e) {
+                return setMovieDataToArray(movieSearchResults);
+            } catch (IOException | JSONException e) {
                 e.printStackTrace ();
             }
-            return movies;
+            return null;
         }
         protected void onPostExecute(Movie[] movies) {
             // specify an adapter
-            if (mReviewAdapter.getItemCount () != -1) {
-                mReviewAdapter = new ReviewAdapter(movies);
-                mRecyclerView.setAdapter(mReviewAdapter);
-            }
+            mReviewAdapter = new ReviewAdapter(movies);
+            mRecyclerView.setAdapter(mReviewAdapter);
         }
+    }
+
+    public Movie[] setMovieDataToArray(String jsonResults) throws JSONException {
+        JSONObject root = new JSONObject(jsonResults);
+        JSONArray resultsArray = root.getJSONArray (Constants.RESULTS_QUERY_PARAM);
+        Movie[] movies = new Movie[resultsArray.length ()];
+
+        for (int i = 0; i < resultsArray.length(); i++) {
+            // Initialize each object before it can be used
+            movies[i] = new Movie();
+
+            // Object contains all tags we're looking for
+            JSONObject movieInfo = resultsArray.getJSONObject(i);
+
+            // Store data in movie object
+            movies[i].setReviewAuthor (movieInfo.getString(Constants.REVIEW_AUTHOR_QUERY_PARAM));
+            movies[i].setReviewContents (movieInfo.getString(Constants.REVIEW_QUERY_PARAM));
+            movies[i].setReviewUrl (movieInfo.getString (Constants.REVIEW_URL_PARAM));
+        }
+        return movies;
     }
 }
