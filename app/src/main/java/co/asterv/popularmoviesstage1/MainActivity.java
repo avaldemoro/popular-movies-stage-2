@@ -121,6 +121,7 @@ public class MainActivity extends AppCompatActivity {
             movies[i].setOverview(movieInfo.getString(Constants.OVERVIEW_QUERY_PARAM));
             movies[i].setVoterAverage(movieInfo.getDouble(Constants.VOTER_AVERAGE_QUERY_PARAM));
             movies[i].setReleaseDate(movieInfo.getString(Constants.RELEASE_DATE_QUERY_PARAM));
+            movies[i].setMovieId (movieInfo.getInt (Constants.MOVIE_ID_QUERY_PARAM));
         }
         return movies;
     }

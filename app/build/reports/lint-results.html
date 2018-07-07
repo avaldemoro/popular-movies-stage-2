@@ -173,23 +173,23 @@ document.getElementById(id).style.display = 'none';
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">Lint Report: 21 warnings</span>
+      <span class="mdl-layout-title">Lint Report: 23 warnings</span>
       <div class="mdl-layout-spacer"></div>
       <nav class="mdl-navigation mdl-layout--large-screen-only">
-Check performed at Wed Jul 04 00:58:21 EDT 2018      </nav>
+Check performed at Fri Jul 06 14:13:27 EDT 2018      </nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
     <span class="mdl-layout-title">Issue Types</span>
     <nav class="mdl-navigation">
       <a class="mdl-navigation__link" href="#overview"><i class="material-icons">dashboard</i>Overview</a>
+      <a class="mdl-navigation__link" href="#ScrollViewSize"><i class="material-icons warning-icon">warning</i>ScrollView size validation (1)</a>
       <a class="mdl-navigation__link" href="#AllowBackup"><i class="material-icons warning-icon">warning</i>AllowBackup/FullBackupContent Problems (1)</a>
-      <a class="mdl-navigation__link" href="#StaticFieldLeak"><i class="material-icons warning-icon">warning</i>Static Field Leaks (1)</a>
       <a class="mdl-navigation__link" href="#UnusedResources"><i class="material-icons warning-icon">warning</i>Unused resources (1)</a>
       <a class="mdl-navigation__link" href="#GoogleAppIndexingWarning"><i class="material-icons warning-icon">warning</i>Missing support for Firebase App Indexing (1)</a>
       <a class="mdl-navigation__link" href="#ContentDescription"><i class="material-icons warning-icon">warning</i>Image without <code>contentDescription</code> (3)</a>
       <a class="mdl-navigation__link" href="#SetTextI18n"><i class="material-icons warning-icon">warning</i>TextView Internationalization (2)</a>
-      <a class="mdl-navigation__link" href="#HardcodedText"><i class="material-icons warning-icon">warning</i>Hardcoded text (12)</a>
+      <a class="mdl-navigation__link" href="#HardcodedText"><i class="material-icons warning-icon">warning</i>Hardcoded text (14)</a>
     </nav>
   </div>
   <main class="mdl-layout__content">
@@ -202,6 +202,11 @@ Check performed at Wed Jul 04 00:58:21 EDT 2018      </nav>
   </div>
               <div class="mdl-card__supporting-text">
 <table class="overview">
+<tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Correctness">Correctness</a>
+</td></tr>
+<tr>
+<td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<a href="#ScrollViewSize">ScrollViewSize</a>: ScrollView size validation</td></tr>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Security">Security</a>
 </td></tr>
 <tr>
@@ -209,9 +214,6 @@ Check performed at Wed Jul 04 00:58:21 EDT 2018      </nav>
 <a href="#AllowBackup">AllowBackup</a>: AllowBackup/FullBackupContent Problems</td></tr>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Performance">Performance</a>
 </td></tr>
-<tr>
-<td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
-<a href="#StaticFieldLeak">StaticFieldLeak</a>: Static Field Leaks</td></tr>
 <tr>
 <td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#UnusedResources">UnusedResources</a>: Unused resources</td></tr>
@@ -231,13 +233,60 @@ Check performed at Wed Jul 04 00:58:21 EDT 2018      </nav>
 <td class="countColumn">2</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#SetTextI18n">SetTextI18n</a>: TextView Internationalization</td></tr>
 <tr>
-<td class="countColumn">12</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">14</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#HardcodedText">HardcodedText</a>: Hardcoded text</td></tr>
 <tr><td></td><td class="categoryColumn"><a href="#MissingIssues">Disabled Checks (23)</a>
 </td></tr></table>
 <br/>              </div>
               <div class="mdl-card__actions mdl-card--border">
 <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="OverviewCardLink" onclick="hideid('OverviewCard');">
+Dismiss</button>            </div>
+            </div>
+          </section>
+<a name="Correctness"></a>
+<a name="ScrollViewSize"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="ScrollViewSizeCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">ScrollView size validation</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+<div class="issue">
+<div class="warningslist">
+<span class="location"><a href="../../src/main/res/layout/activity_movie_details.xml">../../src/main/res/layout/activity_movie_details.xml</a>:11</span>: <span class="message">This android.support.constraint.ConstraintLayout should use <code>android:layout_height="wrap_content"</code></span><br /><pre class="errorlines">
+<span class="lineno">   8 </span>
+<span class="lineno">   9 </span><span class="tag">&lt;android.support.constraint.ConstraintLayout</span><span class="attribute">
+</span><span class="lineno">  10 </span><span class="attribute">    </span><span class="prefix">android:</span><span class="attribute">layout_width</span>=<span class="value">"match_parent"</span>
+<span class="caretline"><span class="lineno">  11 </span>    <span class="warning"><span class="prefix">android:</span><span class="attribute">layout_height</span>=<span class="value">"match_parent"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  12 </span>    <span class="prefix">android:</span><span class="attribute">orientation</span>=<span class="value">"vertical"</span>
+<span class="lineno">  13 </span>    <span class="prefix">tools:</span><span class="attribute">context</span>=<span class="value">".MovieDetails"</span>>
+</pre>
+
+</div>
+<div class="metadata"><div class="explanation" id="explanationScrollViewSize" style="display: none;">
+ScrollView children must set their <code>layout_width</code> or <code>layout_height</code> attributes to <code>wrap_content</code> rather than <code>fill_parent</code> or <code>match_parent</code> in the scrolling dimension<br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+To suppress this error, use the issue id "ScrollViewSize" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="chips">
+<span class="mdl-chip">
+    <span class="mdl-chip__text">ScrollViewSize</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Correctness</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Warning</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Priority 7/10</span>
+</span>
+</div>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationScrollViewSizeLink" onclick="reveal('explanationScrollViewSize');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="ScrollViewSizeCardLink" onclick="hideid('ScrollViewSizeCard');">
 Dismiss</button>            </div>
             </div>
           </section>
@@ -301,58 +350,7 @@ Dismiss</button>            </div>
             </div>
           </section>
 <a name="Performance"></a>
-<a name="StaticFieldLeak"></a>
-<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="StaticFieldLeakCard" style="display: block;">
-            <div class="mdl-card mdl-cell mdl-cell--12-col">
-  <div class="mdl-card__title">
-    <h2 class="mdl-card__title-text">Static Field Leaks</h2>
-  </div>
-              <div class="mdl-card__supporting-text">
-<div class="issue">
-<div class="warningslist">
-<span class="location"><a href="../../src/main/java/co/asterv/popularmoviesstage1/MainActivity.java">../../src/main/java/co/asterv/popularmoviesstage1/MainActivity.java</a>:110</span>: <span class="message">This AsyncTask class should be static or leaks might occur (co.asterv.popularmoviesstage1.MainActivity.FetchDataAsyncTask)</span><br /><pre class="errorlines">
-<span class="lineno"> 107 </span><span class="javadoc">    * FETCH MOVIE DATA ASYNC TASK
-</span><span class="lineno"> 108 </span><span class="javadoc">    ***/</span>
-<span class="lineno"> 109 </span>
-<span class="caretline"><span class="lineno"> 110 </span>    <span class="keyword">public</span> <span class="keyword">class</span> <span class="warning">FetchDataAsyncTask</span> <span class="keyword">extends</span> AsyncTask&lt;String, Void, Movie[]> {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 111 </span>        <span class="keyword">public</span> FetchDataAsyncTask() {
-<span class="lineno"> 112 </span>            <span class="keyword">super</span>();
-<span class="lineno"> 113 </span>        }
-</pre>
-
-</div>
-<div class="metadata"><div class="explanation" id="explanationStaticFieldLeak" style="display: none;">
-A static field will leak contexts.<br/>
-<br/>
-Non-static inner classes have an implicit reference to their outer class. If that outer class is for example a <code>Fragment</code> or <code>Activity</code>, then this reference means that the long-running handler/loader/task will hold a reference to the activity which prevents it from getting garbage collected.<br/>
-<br/>
-Similarly, direct field references to activities and fragments from these longer running instances can cause leaks.<br/>
-<br/>
-ViewModel classes should never point to Views or non-application Contexts.<br/>To suppress this error, use the issue id "StaticFieldLeak" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
-<br/></div>
-</div>
-</div>
-<div class="chips">
-<span class="mdl-chip">
-    <span class="mdl-chip__text">StaticFieldLeak</span>
-</span>
-<span class="mdl-chip">
-    <span class="mdl-chip__text">Performance</span>
-</span>
-<span class="mdl-chip">
-    <span class="mdl-chip__text">Warning</span>
-</span>
-<span class="mdl-chip">
-    <span class="mdl-chip__text">Priority 6/10</span>
-</span>
-</div>
-              </div>
-              <div class="mdl-card__actions mdl-card--border">
-<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationStaticFieldLeakLink" onclick="reveal('explanationStaticFieldLeak');">
-Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="StaticFieldLeakCardLink" onclick="hideid('StaticFieldLeakCard');">
-Dismiss</button>            </div>
-            </div>
-          </section><a name="UnusedResources"></a>
+<a name="UnusedResources"></a>
 <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="UnusedResourcesCard" style="display: block;">
             <div class="mdl-card mdl-cell mdl-cell--12-col">
   <div class="mdl-card__title">
@@ -456,15 +454,6 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../src/main/res/layout/activity_movie_details.xml">../../src/main/res/layout/activity_movie_details.xml</a>:10</span>: <span class="message">Missing <code>contentDescription</code> attribute on image</span><br /><pre class="errorlines">
-<span class="lineno">   7 </span>    <span class="prefix">android:</span><span class="attribute">orientation</span>=<span class="value">"vertical"</span>
-<span class="lineno">   8 </span>    <span class="prefix">tools:</span><span class="attribute">context</span>=<span class="value">".MovieDetails"</span>>
-<span class="lineno">   9 </span>
-<span class="caretline"><span class="lineno">  10 </span>    <span class="warning"><span class="tag">&lt;ImageView</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno">  11 </span><span class="attribute">        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/posterImageView"</span>
-<span class="lineno">  12 </span>        <span class="prefix">android:</span><span class="attribute">layout_width</span>=<span class="value">"189dp"</span>
-<span class="lineno">  13 </span>        <span class="prefix">android:</span><span class="attribute">layout_height</span>=<span class="value">"260dp"</span></pre>
-
 <span class="location"><a href="../../src/main/res/layout-land/activity_movie_details.xml">../../src/main/res/layout-land/activity_movie_details.xml</a>:14</span>: <span class="message">Missing <code>contentDescription</code> attribute on image</span><br /><pre class="errorlines">
 <span class="lineno">  11 </span>        <span class="prefix">android:</span><span class="attribute">layout_width</span>=<span class="value">"match_parent"</span>
 <span class="lineno">  12 </span>        <span class="prefix">android:</span><span class="attribute">layout_height</span>=<span class="value">"match_parent"</span>>
@@ -473,6 +462,15 @@ Dismiss</button>            </div>
 </span><span class="lineno">  15 </span><span class="attribute">            </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/posterImageView"</span>
 <span class="lineno">  16 </span>            <span class="prefix">android:</span><span class="attribute">layout_width</span>=<span class="value">"208dp"</span>
 <span class="lineno">  17 </span>            <span class="prefix">android:</span><span class="attribute">layout_height</span>=<span class="value">"283dp"</span></pre>
+
+<span class="location"><a href="../../src/main/res/layout/activity_movie_details.xml">../../src/main/res/layout/activity_movie_details.xml</a>:15</span>: <span class="message">Missing <code>contentDescription</code> attribute on image</span><br /><pre class="errorlines">
+<span class="lineno">  12 </span>    <span class="prefix">android:</span><span class="attribute">orientation</span>=<span class="value">"vertical"</span>
+<span class="lineno">  13 </span>    <span class="prefix">tools:</span><span class="attribute">context</span>=<span class="value">".MovieDetails"</span>>
+<span class="lineno">  14 </span>
+<span class="caretline"><span class="lineno">  15 </span>    <span class="warning"><span class="tag">&lt;ImageView</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
+</span><span class="lineno">  16 </span><span class="attribute">        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/posterImageView"</span>
+<span class="lineno">  17 </span>        <span class="prefix">android:</span><span class="attribute">layout_width</span>=<span class="value">"187dp"</span>
+<span class="lineno">  18 </span>        <span class="prefix">android:</span><span class="attribute">layout_height</span>=<span class="value">"288dp"</span></pre>
 
 <span class="location"><a href="../../src/main/res/layout/image_thumb_view.xml">../../src/main/res/layout/image_thumb_view.xml</a>:3</span>: <span class="message">Missing <code>contentDescription</code> attribute on image</span><br /><pre class="errorlines">
 <span class="lineno"> 1 </span><span class="prologue">&lt;?xml version="1.0" encoding="utf-8"?></span>
@@ -524,24 +522,24 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../src/main/java/co/asterv/popularmoviesstage1/MovieDetails.java">../../src/main/java/co/asterv/popularmoviesstage1/MovieDetails.java</a>:54</span>: <span class="message">Do not concatenate text displayed with <code>setText</code>. Use resource string with placeholders.</span><br /><pre class="errorlines">
-<span class="lineno"> 51 </span>        originalTitleTV.setText(movie.getOriginalTitle());
-<span class="lineno"> 52 </span>
-<span class="lineno"> 53 </span>        <span class="comment">// VOTER AVERAGE / RATING</span>
-<span class="caretline"><span class="lineno"> 54 </span>        ratingTV.setText (<span class="warning">String.valueOf(movie.getVoterAverage ()) + <span class="string">" / 10"</span></span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 55 </span>
-<span class="lineno"> 56 </span>        <span class="comment">// IMAGE</span>
-<span class="lineno"> 57 </span>        Picasso.with(<span class="keyword">this</span>)
+<span class="location"><a href="../../src/main/java/co/asterv/popularmoviesstage1/MovieDetails.java">../../src/main/java/co/asterv/popularmoviesstage1/MovieDetails.java</a>:97</span>: <span class="message">Do not concatenate text displayed with <code>setText</code>. Use resource string with placeholders.</span><br /><pre class="errorlines">
+<span class="lineno">  94 </span>        originalTitleTV.setText(movie.getOriginalTitle());
+<span class="lineno">  95 </span>
+<span class="lineno">  96 </span>        <span class="comment">// VOTER AVERAGE / RATING</span>
+<span class="caretline"><span class="lineno">  97 </span>        ratingTV.setText (<span class="warning">String.valueOf(movie.getVoterAverage ()) + <span class="string">" / 10"</span></span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  98 </span>
+<span class="lineno">  99 </span>        <span class="comment">// IMAGE</span>
+<span class="lineno"> 100 </span>        Picasso.with(<span class="keyword">this</span>)
 </pre>
 
-<span class="location"><a href="../../src/main/java/co/asterv/popularmoviesstage1/MovieDetails.java">../../src/main/java/co/asterv/popularmoviesstage1/MovieDetails.java</a>:54</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
-<span class="lineno"> 51 </span>        originalTitleTV.setText(movie.getOriginalTitle());
-<span class="lineno"> 52 </span>
-<span class="lineno"> 53 </span>        <span class="comment">// VOTER AVERAGE / RATING</span>
-<span class="caretline"><span class="lineno"> 54 </span>        ratingTV.setText (String.valueOf(movie.getVoterAverage ()) + <span class="warning"><span class="string">" / 10"</span></span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 55 </span>
-<span class="lineno"> 56 </span>        <span class="comment">// IMAGE</span>
-<span class="lineno"> 57 </span>        Picasso.with(<span class="keyword">this</span>)
+<span class="location"><a href="../../src/main/java/co/asterv/popularmoviesstage1/MovieDetails.java">../../src/main/java/co/asterv/popularmoviesstage1/MovieDetails.java</a>:97</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
+<span class="lineno">  94 </span>        originalTitleTV.setText(movie.getOriginalTitle());
+<span class="lineno">  95 </span>
+<span class="lineno">  96 </span>        <span class="comment">// VOTER AVERAGE / RATING</span>
+<span class="caretline"><span class="lineno">  97 </span>        ratingTV.setText (String.valueOf(movie.getVoterAverage ()) + <span class="warning"><span class="string">" / 10"</span></span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  98 </span>
+<span class="lineno">  99 </span>        <span class="comment">// IMAGE</span>
+<span class="lineno"> 100 </span>        Picasso.with(<span class="keyword">this</span>)
 </pre>
 
 </div>
@@ -583,15 +581,6 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../src/main/res/layout/activity_movie_details.xml">../../src/main/res/layout/activity_movie_details.xml</a>:26</span>: <span class="message">Hardcoded string "Title Placeholder", should use <code>@string</code> resource</span><br /><pre class="errorlines">
-<span class="lineno">  23 </span>        <span class="prefix">android:</span><span class="attribute">layout_marginEnd</span>=<span class="value">"8dp"</span>
-<span class="lineno">  24 </span>        <span class="prefix">android:</span><span class="attribute">layout_marginStart</span>=<span class="value">"8dp"</span>
-<span class="lineno">  25 </span>        <span class="prefix">android:</span><span class="attribute">layout_marginTop</span>=<span class="value">"16dp"</span>
-<span class="caretline"><span class="lineno">  26 </span>        <span class="warning"><span class="prefix">android:</span><span class="attribute">text</span>=<span class="value">"Title Placeholder"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  27 </span>        <span class="prefix">android:</span><span class="attribute">textAlignment</span>=<span class="value">"textStart"</span>
-<span class="lineno">  28 </span>        <span class="prefix">android:</span><span class="attribute">textSize</span>=<span class="value">"30sp"</span>
-<span class="lineno">  29 </span>        <span class="prefix">android:</span><span class="attribute">textStyle</span>=<span class="value">"bold"</span></pre>
-
 <span class="location"><a href="../../src/main/res/layout-land/activity_movie_details.xml">../../src/main/res/layout-land/activity_movie_details.xml</a>:32</span>: <span class="message">Hardcoded string "Title Placeholder", should use <code>@string</code> resource</span><br /><pre class="errorlines">
 <span class="lineno">  29 </span>            <span class="prefix">android:</span><span class="attribute">layout_marginEnd</span>=<span class="value">"8dp"</span>
 <span class="lineno">  30 </span>            <span class="prefix">android:</span><span class="attribute">layout_marginStart</span>=<span class="value">"24dp"</span>
@@ -601,14 +590,14 @@ Dismiss</button>            </div>
 <span class="lineno">  34 </span>            <span class="prefix">android:</span><span class="attribute">textSize</span>=<span class="value">"30sp"</span>
 <span class="lineno">  35 </span>            <span class="prefix">android:</span><span class="attribute">textStyle</span>=<span class="value">"bold"</span></pre>
 
-<span class="location"><a href="../../src/main/res/layout/activity_movie_details.xml">../../src/main/res/layout/activity_movie_details.xml</a>:42</span>: <span class="message">Hardcoded string "x.x / 10", should use <code>@string</code> resource</span><br /><pre class="errorlines">
-<span class="lineno">  39 </span>        <span class="prefix">android:</span><span class="attribute">layout_marginEnd</span>=<span class="value">"8dp"</span>
-<span class="lineno">  40 </span>        <span class="prefix">android:</span><span class="attribute">layout_marginStart</span>=<span class="value">"8dp"</span>
-<span class="lineno">  41 </span>        <span class="prefix">android:</span><span class="attribute">layout_marginTop</span>=<span class="value">"20dp"</span>
-<span class="caretline"><span class="lineno">  42 </span>        <span class="warning"><span class="prefix">android:</span><span class="attribute">text</span>=<span class="value">"x.x / 10"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  43 </span>        <span class="prefix">android:</span><span class="attribute">textSize</span>=<span class="value">"20sp"</span>
-<span class="lineno">  44 </span>        <span class="prefix">app:</span><span class="attribute">layout_constraintEnd_toEndOf</span>=<span class="value">"parent"</span>
-<span class="lineno">  45 </span>        <span class="prefix">app:</span><span class="attribute">layout_constraintHorizontal_bias</span>=<span class="value">"0.0"</span></pre>
+<span class="location"><a href="../../src/main/res/layout/activity_movie_details.xml">../../src/main/res/layout/activity_movie_details.xml</a>:38</span>: <span class="message">Hardcoded string "Title Placeholder", should use <code>@string</code> resource</span><br /><pre class="errorlines">
+<span class="lineno">  35 </span>        <span class="prefix">android:</span><span class="attribute">layout_marginEnd</span>=<span class="value">"8dp"</span>
+<span class="lineno">  36 </span>        <span class="prefix">android:</span><span class="attribute">layout_marginStart</span>=<span class="value">"16dp"</span>
+<span class="lineno">  37 </span>        <span class="prefix">android:</span><span class="attribute">layout_marginTop</span>=<span class="value">"16dp"</span>
+<span class="caretline"><span class="lineno">  38 </span>        <span class="warning"><span class="prefix">android:</span><span class="attribute">text</span>=<span class="value">"Title Placeholder"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  39 </span>        <span class="prefix">android:</span><span class="attribute">textAlignment</span>=<span class="value">"textStart"</span>
+<span class="lineno">  40 </span>        <span class="prefix">android:</span><span class="attribute">textSize</span>=<span class="value">"30sp"</span>
+<span class="lineno">  41 </span>        <span class="prefix">android:</span><span class="attribute">textStyle</span>=<span class="value">"bold"</span></pre>
 
 <span class="location"><a href="../../src/main/res/layout-land/activity_movie_details.xml">../../src/main/res/layout-land/activity_movie_details.xml</a>:48</span>: <span class="message">Hardcoded string "x.x / 10", should use <code>@string</code> resource</span><br /><pre class="errorlines">
 <span class="lineno">  45 </span>            <span class="prefix">android:</span><span class="attribute">layout_marginEnd</span>=<span class="value">"8dp"</span>
@@ -619,17 +608,15 @@ Dismiss</button>            </div>
 <span class="lineno">  50 </span>            <span class="prefix">app:</span><span class="attribute">layout_constraintEnd_toEndOf</span>=<span class="value">"parent"</span>
 <span class="lineno">  51 </span>            <span class="prefix">app:</span><span class="attribute">layout_constraintHorizontal_bias</span>=<span class="value">"0.0"</span></pre>
 
-<span class="location"><a href="../../src/main/res/layout/activity_movie_details.xml">../../src/main/res/layout/activity_movie_details.xml</a>:57</span>: <span class="message">Hardcoded string "XX/XX/XXXX", should use <code>@string</code> resource</span><br /><pre class="errorlines">
-<span class="lineno">  54 </span>        <span class="prefix">android:</span><span class="attribute">layout_marginEnd</span>=<span class="value">"48dp"</span>
-<span class="lineno">  55 </span>        <span class="prefix">android:</span><span class="attribute">layout_marginStart</span>=<span class="value">"8dp"</span>
-<span class="lineno">  56 </span>        <span class="prefix">android:</span><span class="attribute">layout_marginTop</span>=<span class="value">"8dp"</span>
-<span class="caretline"><span class="lineno">  57 </span>        <span class="warning"><span class="prefix">android:</span><span class="attribute">text</span>=<span class="value">"XX/XX/XXXX"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  58 </span>        <span class="prefix">android:</span><span class="attribute">textSize</span>=<span class="value">"20sp"</span>
-<span class="lineno">  59 </span>        <span class="prefix">app:</span><span class="attribute">layout_constraintBottom_toTopOf</span>=<span class="value">"@+id/overviewTextView"</span>
-<span class="lineno">  60 </span>        <span class="prefix">app:</span><span class="attribute">layout_constraintEnd_toEndOf</span>=<span class="value">"parent"</span></pre>
+<span class="location"><a href="../../src/main/res/layout/activity_movie_details.xml">../../src/main/res/layout/activity_movie_details.xml</a>:55</span>: <span class="message">Hardcoded string "x.x / 10", should use <code>@string</code> resource</span><br /><pre class="errorlines">
+<span class="lineno">  52 </span>        <span class="prefix">android:</span><span class="attribute">layout_marginEnd</span>=<span class="value">"8dp"</span>
+<span class="lineno">  53 </span>        <span class="prefix">android:</span><span class="attribute">layout_marginStart</span>=<span class="value">"8dp"</span>
+<span class="lineno">  54 </span>        <span class="prefix">android:</span><span class="attribute">layout_marginTop</span>=<span class="value">"16dp"</span>
+<span class="caretline"><span class="lineno">  55 </span>        <span class="warning"><span class="prefix">android:</span><span class="attribute">text</span>=<span class="value">"x.x / 10"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  56 </span>        <span class="prefix">android:</span><span class="attribute">textSize</span>=<span class="value">"20sp"</span>
+<span class="lineno">  57 </span>        <span class="prefix">app:</span><span class="attribute">layout_constraintEnd_toEndOf</span>=<span class="value">"parent"</span>
+<span class="lineno">  58 </span>        <span class="prefix">app:</span><span class="attribute">layout_constraintHorizontal_bias</span>=<span class="value">"0.0"</span></pre>
 
-<button class="mdl-button mdl-js-button mdl-button--primary" id="HardcodedTextDivLink" onclick="reveal('HardcodedTextDiv');" />+ 7 More Occurrences...</button>
-<div id="HardcodedTextDiv" style="display: none">
 <span class="location"><a href="../../src/main/res/layout-land/activity_movie_details.xml">../../src/main/res/layout-land/activity_movie_details.xml</a>:63</span>: <span class="message">Hardcoded string "XX/XX/XXXX", should use <code>@string</code> resource</span><br /><pre class="errorlines">
 <span class="lineno">  60 </span>            <span class="prefix">android:</span><span class="attribute">layout_marginEnd</span>=<span class="value">"8dp"</span>
 <span class="lineno">  61 </span>            <span class="prefix">android:</span><span class="attribute">layout_marginStart</span>=<span class="value">"8dp"</span>
@@ -639,14 +626,16 @@ Dismiss</button>            </div>
 <span class="lineno">  65 </span>            <span class="prefix">app:</span><span class="attribute">layout_constraintBottom_toTopOf</span>=<span class="value">"@+id/overviewTextView"</span>
 <span class="lineno">  66 </span>            <span class="prefix">app:</span><span class="attribute">layout_constraintEnd_toEndOf</span>=<span class="value">"parent"</span></pre>
 
-<span class="location"><a href="../../src/main/res/layout/activity_movie_details.xml">../../src/main/res/layout/activity_movie_details.xml</a>:73</span>: <span class="message">Hardcoded string "Rating: ", should use <code>@string</code> resource</span><br /><pre class="errorlines">
-<span class="lineno">  70 </span>        <span class="prefix">android:</span><span class="attribute">layout_height</span>=<span class="value">"0dp"</span>
-<span class="lineno">  71 </span>        <span class="prefix">android:</span><span class="attribute">layout_marginStart</span>=<span class="value">"8dp"</span>
-<span class="lineno">  72 </span>        <span class="prefix">android:</span><span class="attribute">layout_marginTop</span>=<span class="value">"20dp"</span>
-<span class="caretline"><span class="lineno">  73 </span>        <span class="warning"><span class="prefix">android:</span><span class="attribute">text</span>=<span class="value">"Rating: "</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  74 </span>        <span class="prefix">android:</span><span class="attribute">textSize</span>=<span class="value">"20sp"</span>
-<span class="lineno">  75 </span>        <span class="prefix">android:</span><span class="attribute">textStyle</span>=<span class="value">"bold"</span>
-<span class="lineno">  76 </span>        <span class="prefix">app:</span><span class="attribute">layout_constraintStart_toEndOf</span>=<span class="value">"@+id/posterImageView"</span></pre>
+<button class="mdl-button mdl-js-button mdl-button--primary" id="HardcodedTextDivLink" onclick="reveal('HardcodedTextDiv');" />+ 9 More Occurrences...</button>
+<div id="HardcodedTextDiv" style="display: none">
+<span class="location"><a href="../../src/main/res/layout/activity_movie_details.xml">../../src/main/res/layout/activity_movie_details.xml</a>:69</span>: <span class="message">Hardcoded string "XX/XX/XXXX", should use <code>@string</code> resource</span><br /><pre class="errorlines">
+<span class="lineno">  66 </span>        <span class="prefix">android:</span><span class="attribute">layout_marginEnd</span>=<span class="value">"8dp"</span>
+<span class="lineno">  67 </span>        <span class="prefix">android:</span><span class="attribute">layout_marginStart</span>=<span class="value">"16dp"</span>
+<span class="lineno">  68 </span>        <span class="prefix">android:</span><span class="attribute">layout_marginTop</span>=<span class="value">"8dp"</span>
+<span class="caretline"><span class="lineno">  69 </span>        <span class="warning"><span class="prefix">android:</span><span class="attribute">text</span>=<span class="value">"XX/XX/XXXX"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  70 </span>        <span class="prefix">android:</span><span class="attribute">textSize</span>=<span class="value">"20sp"</span>
+<span class="lineno">  71 </span>        <span class="prefix">app:</span><span class="attribute">layout_constraintEnd_toEndOf</span>=<span class="value">"parent"</span>
+<span class="lineno">  72 </span>        <span class="prefix">app:</span><span class="attribute">layout_constraintHorizontal_bias</span>=<span class="value">"0.49"</span></pre>
 
 <span class="location"><a href="../../src/main/res/layout-land/activity_movie_details.xml">../../src/main/res/layout-land/activity_movie_details.xml</a>:79</span>: <span class="message">Hardcoded string "Rating: ", should use <code>@string</code> resource</span><br /><pre class="errorlines">
 <span class="lineno">  76 </span>            <span class="prefix">android:</span><span class="attribute">layout_height</span>=<span class="value">"0dp"</span>
@@ -657,14 +646,14 @@ Dismiss</button>            </div>
 <span class="lineno">  81 </span>            <span class="prefix">android:</span><span class="attribute">textStyle</span>=<span class="value">"bold"</span>
 <span class="lineno">  82 </span>            <span class="prefix">app:</span><span class="attribute">layout_constraintStart_toEndOf</span>=<span class="value">"@+id/posterImageView"</span></pre>
 
-<span class="location"><a href="../../src/main/res/layout/activity_movie_details.xml">../../src/main/res/layout/activity_movie_details.xml</a>:86</span>: <span class="message">Hardcoded string "Released: ", should use <code>@string</code> resource</span><br /><pre class="errorlines">
-<span class="lineno">  83 </span>        <span class="prefix">android:</span><span class="attribute">layout_marginBottom</span>=<span class="value">"8dp"</span>
-<span class="lineno">  84 </span>        <span class="prefix">android:</span><span class="attribute">layout_marginEnd</span>=<span class="value">"8dp"</span>
-<span class="lineno">  85 </span>        <span class="prefix">android:</span><span class="attribute">layout_marginTop</span>=<span class="value">"20dp"</span>
-<span class="caretline"><span class="lineno">  86 </span>        <span class="warning"><span class="prefix">android:</span><span class="attribute">text</span>=<span class="value">"Released: "</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  87 </span>        <span class="prefix">android:</span><span class="attribute">textSize</span>=<span class="value">"20sp"</span>
-<span class="lineno">  88 </span>        <span class="prefix">android:</span><span class="attribute">textStyle</span>=<span class="value">"bold"</span>
-<span class="lineno">  89 </span>        <span class="prefix">app:</span><span class="attribute">layout_constraintBottom_toTopOf</span>=<span class="value">"@+id/releaseDateTextView"</span></pre>
+<span class="location"><a href="../../src/main/res/layout/activity_movie_details.xml">../../src/main/res/layout/activity_movie_details.xml</a>:85</span>: <span class="message">Hardcoded string "Rating: ", should use <code>@string</code> resource</span><br /><pre class="errorlines">
+<span class="lineno">  82 </span>        <span class="prefix">android:</span><span class="attribute">layout_marginEnd</span>=<span class="value">"8dp"</span>
+<span class="lineno">  83 </span>        <span class="prefix">android:</span><span class="attribute">layout_marginStart</span>=<span class="value">"16dp"</span>
+<span class="lineno">  84 </span>        <span class="prefix">android:</span><span class="attribute">layout_marginTop</span>=<span class="value">"16dp"</span>
+<span class="caretline"><span class="lineno">  85 </span>        <span class="warning"><span class="prefix">android:</span><span class="attribute">text</span>=<span class="value">"Rating: "</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  86 </span>        <span class="prefix">android:</span><span class="attribute">textSize</span>=<span class="value">"20sp"</span>
+<span class="lineno">  87 </span>        <span class="prefix">android:</span><span class="attribute">textStyle</span>=<span class="value">"bold"</span>
+<span class="lineno">  88 </span>        <span class="prefix">app:</span><span class="attribute">layout_constraintBottom_toTopOf</span>=<span class="value">"@+id/releaseDateLabel"</span></pre>
 
 <span class="location"><a href="../../src/main/res/layout-land/activity_movie_details.xml">../../src/main/res/layout-land/activity_movie_details.xml</a>:91</span>: <span class="message">Hardcoded string "Released: ", should use <code>@string</code> resource</span><br /><pre class="errorlines">
 <span class="lineno">  88 </span>            <span class="prefix">android:</span><span class="attribute">layout_height</span>=<span class="value">"wrap_content"</span>
@@ -675,14 +664,14 @@ Dismiss</button>            </div>
 <span class="lineno">  93 </span>            <span class="prefix">android:</span><span class="attribute">textStyle</span>=<span class="value">"bold"</span>
 <span class="lineno">  94 </span>            <span class="prefix">app:</span><span class="attribute">layout_constraintStart_toEndOf</span>=<span class="value">"@+id/posterImageView"</span></pre>
 
-<span class="location"><a href="../../src/main/res/layout/activity_movie_details.xml">../../src/main/res/layout/activity_movie_details.xml</a>:102</span>: <span class="message">Hardcoded string "Overview", should use <code>@string</code> resource</span><br /><pre class="errorlines">
-<span class="lineno">  99 </span>        <span class="prefix">android:</span><span class="attribute">layout_height</span>=<span class="value">"0dp"</span>
-<span class="lineno"> 100 </span>        <span class="prefix">android:</span><span class="attribute">padding</span>=<span class="value">"10dp"</span>
-<span class="lineno"> 101 </span>        <span class="prefix">android:</span><span class="attribute">scrollbars</span>=<span class="value">"vertical"</span>
-<span class="caretline"><span class="lineno"> 102 </span>        <span class="warning"><span class="prefix">android:</span><span class="attribute">text</span>=<span class="value">"Overview"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 103 </span>        <span class="prefix">android:</span><span class="attribute">textSize</span>=<span class="value">"16sp"</span>
-<span class="lineno"> 104 </span>        <span class="prefix">app:</span><span class="attribute">layout_constraintBottom_toBottomOf</span>=<span class="value">"parent"</span>
-<span class="lineno"> 105 </span>        <span class="prefix">app:</span><span class="attribute">layout_constraintEnd_toEndOf</span>=<span class="value">"parent"</span></pre>
+<span class="location"><a href="../../src/main/res/layout/activity_movie_details.xml">../../src/main/res/layout/activity_movie_details.xml</a>:101</span>: <span class="message">Hardcoded string "Released: ", should use <code>@string</code> resource</span><br /><pre class="errorlines">
+<span class="lineno">  98 </span>        <span class="prefix">android:</span><span class="attribute">layout_marginBottom</span>=<span class="value">"8dp"</span>
+<span class="lineno">  99 </span>        <span class="prefix">android:</span><span class="attribute">layout_marginStart</span>=<span class="value">"16dp"</span>
+<span class="lineno"> 100 </span>        <span class="prefix">android:</span><span class="attribute">layout_marginTop</span>=<span class="value">"8dp"</span>
+<span class="caretline"><span class="lineno"> 101 </span>        <span class="warning"><span class="prefix">android:</span><span class="attribute">text</span>=<span class="value">"Released: "</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 102 </span>        <span class="prefix">android:</span><span class="attribute">textSize</span>=<span class="value">"20sp"</span>
+<span class="lineno"> 103 </span>        <span class="prefix">android:</span><span class="attribute">textStyle</span>=<span class="value">"bold"</span>
+<span class="lineno"> 104 </span>        <span class="prefix">app:</span><span class="attribute">layout_constraintBottom_toTopOf</span>=<span class="value">"@+id/releaseDateTextView"</span></pre>
 
 <span class="location"><a href="../../src/main/res/layout-land/activity_movie_details.xml">../../src/main/res/layout-land/activity_movie_details.xml</a>:106</span>: <span class="message">Hardcoded string "Overview", should use <code>@string</code> resource</span><br /><pre class="errorlines">
 <span class="lineno"> 103 </span>            <span class="prefix">android:</span><span class="attribute">layout_marginStart</span>=<span class="value">"16dp"</span>
@@ -692,6 +681,33 @@ Dismiss</button>            </div>
 <span class="lineno"> 107 </span>            <span class="prefix">android:</span><span class="attribute">textSize</span>=<span class="value">"16sp"</span>
 <span class="lineno"> 108 </span>            <span class="prefix">app:</span><span class="attribute">layout_constraintBottom_toBottomOf</span>=<span class="value">"parent"</span>
 <span class="lineno"> 109 </span>            <span class="prefix">app:</span><span class="attribute">layout_constraintEnd_toEndOf</span>=<span class="value">"parent"</span></pre>
+
+<span class="location"><a href="../../src/main/res/layout/activity_movie_details.xml">../../src/main/res/layout/activity_movie_details.xml</a>:117</span>: <span class="message">Hardcoded string "Overview", should use <code>@string</code> resource</span><br /><pre class="errorlines">
+<span class="lineno"> 114 </span>        <span class="prefix">android:</span><span class="attribute">layout_marginTop</span>=<span class="value">"21dp"</span>
+<span class="lineno"> 115 </span>        <span class="prefix">android:</span><span class="attribute">padding</span>=<span class="value">"10dp"</span>
+<span class="lineno"> 116 </span>        <span class="prefix">android:</span><span class="attribute">scrollbars</span>=<span class="value">"vertical"</span>
+<span class="caretline"><span class="lineno"> 117 </span>        <span class="warning"><span class="prefix">android:</span><span class="attribute">text</span>=<span class="value">"Overview"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 118 </span>        <span class="prefix">android:</span><span class="attribute">textSize</span>=<span class="value">"16sp"</span>
+<span class="lineno"> 119 </span>        <span class="prefix">app:</span><span class="attribute">layout_constraintBottom_toBottomOf</span>=<span class="value">"parent"</span>
+<span class="lineno"> 120 </span>        <span class="prefix">app:</span><span class="attribute">layout_constraintEnd_toEndOf</span>=<span class="value">"parent"</span></pre>
+
+<span class="location"><a href="../../src/main/res/layout-land/activity_movie_details.xml">../../src/main/res/layout-land/activity_movie_details.xml</a>:123</span>: <span class="message">Hardcoded string "WATCH TRAILER", should use <code>@string</code> resource</span><br /><pre class="errorlines">
+<span class="lineno"> 120 </span>            <span class="prefix">android:</span><span class="attribute">layout_marginTop</span>=<span class="value">"8dp"</span>
+<span class="lineno"> 121 </span>            <span class="prefix">android:</span><span class="attribute">lineSpacingExtra</span>=<span class="value">"10sp"</span>
+<span class="lineno"> 122 </span>            <span class="prefix">android:</span><span class="attribute">padding</span>=<span class="value">"15dp"</span>
+<span class="caretline"><span class="lineno"> 123 </span>            <span class="warning"><span class="prefix">android:</span><span class="attribute">text</span>=<span class="value">"WATCH TRAILER"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 124 </span>            <span class="prefix">android:</span><span class="attribute">textAlignment</span>=<span class="value">"center"</span>
+<span class="lineno"> 125 </span>            <span class="prefix">android:</span><span class="attribute">textSize</span>=<span class="value">"18sp"</span>
+<span class="lineno"> 126 </span>            <span class="prefix">android:</span><span class="attribute">textStyle</span>=<span class="value">"bold"</span></pre>
+
+<span class="location"><a href="../../src/main/res/layout/activity_movie_details.xml">../../src/main/res/layout/activity_movie_details.xml</a>:135</span>: <span class="message">Hardcoded string "WATCH TRAILER", should use <code>@string</code> resource</span><br /><pre class="errorlines">
+<span class="lineno"> 132 </span>        <span class="prefix">android:</span><span class="attribute">layout_marginTop</span>=<span class="value">"8dp"</span>
+<span class="lineno"> 133 </span>        <span class="prefix">android:</span><span class="attribute">lineSpacingExtra</span>=<span class="value">"10sp"</span>
+<span class="lineno"> 134 </span>        <span class="prefix">android:</span><span class="attribute">padding</span>=<span class="value">"15dp"</span>
+<span class="caretline"><span class="lineno"> 135 </span>        <span class="warning"><span class="prefix">android:</span><span class="attribute">text</span>=<span class="value">"WATCH TRAILER"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 136 </span>        <span class="prefix">android:</span><span class="attribute">textAlignment</span>=<span class="value">"center"</span>
+<span class="lineno"> 137 </span>        <span class="prefix">android:</span><span class="attribute">textSize</span>=<span class="value">"18sp"</span>
+<span class="lineno"> 138 </span>        <span class="prefix">android:</span><span class="attribute">textStyle</span>=<span class="value">"bold"</span></pre>
 
 </div>
 </div>

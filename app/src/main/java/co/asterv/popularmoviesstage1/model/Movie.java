@@ -11,6 +11,11 @@ public class Movie implements Parcelable{
     private String overview;
     private String releaseDate;
     private Double voterAverage;
+    private int movieId;
+    private String trailerPath;
+    private String reviewAuthor;
+    private String reviewContents;
+    private String reviewUrl;
 
     public Movie() { }
 
@@ -30,6 +35,11 @@ public class Movie implements Parcelable{
     public void setVoterAverage(Double voterAverage) {
         this.voterAverage = voterAverage;
     }
+    public void setTrailerPath(String trailerPath) { this.trailerPath = trailerPath; }
+    public void setMovieId(int movieId) { this.movieId = movieId; }
+    public void setReviewAuthor(String reviewAuthor) { this.reviewAuthor = reviewAuthor; }
+    public void setReviewContents(String reviewContents) { this.reviewAuthor = reviewContents; }
+    public void setReviewUrl(String reviewUrl) { this.reviewAuthor = reviewUrl; }
 
     // GETTER METHODS
     public String getOriginalTitle() {
@@ -47,6 +57,11 @@ public class Movie implements Parcelable{
     public Double getVoterAverage() {
         return voterAverage;
     }
+    public String getTrailerPath() { return trailerPath; }
+    public int getMovieId() { return movieId; }
+    public String getReviewAuthor() { return reviewAuthor; }
+    public String getReviewContents() { return reviewContents; }
+    public String getReviewUrl() { return reviewUrl; }
 
     @Override
     public int describeContents() {
@@ -60,6 +75,11 @@ public class Movie implements Parcelable{
         dest.writeString(overview);
         dest.writeString(releaseDate);
         dest.writeDouble(voterAverage);
+        dest.writeString(trailerPath);
+        dest.writeInt (movieId);
+        dest.writeString (reviewAuthor);
+        dest.writeString (reviewContents);
+        dest.writeString (reviewUrl);
     }
 
     public Movie(Parcel parcel) {
@@ -68,6 +88,11 @@ public class Movie implements Parcelable{
         overview = parcel.readString();
         releaseDate = parcel.readString();
         voterAverage = parcel.readDouble();
+        trailerPath = parcel.readString();
+        movieId = parcel.readInt ();
+        reviewAuthor = parcel.readString ();
+        reviewContents = parcel.readString ();
+        reviewUrl = parcel.readString ();
     }
 
     public static final Parcelable.Creator<Movie> CREATOR = new Parcelable.Creator<Movie>() {

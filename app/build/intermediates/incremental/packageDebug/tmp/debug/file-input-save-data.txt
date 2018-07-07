@@ -1,17 +1,17 @@
 #Internal package file, do not edit.
-#Wed Jul 04 00:58:37 EDT 2018
-2.base=/Users/astervaldemoro/PopularMoviesStage2/app/build/intermediates/transforms/dexMerger/debug/51
+#Fri Jul 06 20:45:24 EDT 2018
+2.base=/Users/astervaldemoro/PopularMoviesStage2/app/build/intermediates/transforms/dexMerger/debug/69
 5.set=DEX
 0.path=classes.dex
 2.baseType=DIRECTORY
-3.base=/Users/astervaldemoro/PopularMoviesStage2/app/build/intermediates/transforms/dexMerger/debug/54
+3.base=/Users/astervaldemoro/PopularMoviesStage2/app/build/intermediates/transforms/dexMerger/debug/73
 2.set=DEX
 1.path=classes.dex
-4.base=/Users/astervaldemoro/PopularMoviesStage2/app/build/intermediates/transforms/dexMerger/debug/52
+4.base=/Users/astervaldemoro/PopularMoviesStage2/app/build/intermediates/transforms/dexMerger/debug/71
 count=6
 5.baseType=DIRECTORY
 2.path=classes.dex
-5.base=/Users/astervaldemoro/PopularMoviesStage2/app/build/intermediates/transforms/dexMerger/debug/50
+5.base=/Users/astervaldemoro/PopularMoviesStage2/app/build/intermediates/transforms/dexMerger/debug/72
 4.set=DEX
 3.path=classes.dex
 3.baseType=DIRECTORY
@@ -19,9 +19,9 @@ count=6
 4.path=classes.dex
 1.baseType=DIRECTORY
 5.path=classes.dex
-0.base=/Users/astervaldemoro/PopularMoviesStage2/app/build/intermediates/transforms/dexMerger/debug/49
+0.base=/Users/astervaldemoro/PopularMoviesStage2/app/build/intermediates/transforms/dexMerger/debug/70
 0.baseType=DIRECTORY
 3.set=DEX
-1.base=/Users/astervaldemoro/PopularMoviesStage2/app/build/intermediates/transforms/dexMerger/debug/53
+1.base=/Users/astervaldemoro/PopularMoviesStage2/app/build/intermediates/transforms/dexMerger/debug/68
 4.baseType=DIRECTORY
 0.set=DEX

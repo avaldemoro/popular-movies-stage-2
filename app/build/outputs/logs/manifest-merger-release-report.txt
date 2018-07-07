@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml:2:1-25:12
-INJECTED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml:2:1-25:12
-INJECTED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml:2:1-25:12
-INJECTED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml:2:1-25:12
+ADDED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml:2:1-26:12
+INJECTED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml:2:1-26:12
+INJECTED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml:2:1-26:12
+INJECTED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml:2:1-26:12
 MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/a3df4aa2ab90dddb6f2f8315061bc82f/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/02717991326201e31376c9ef7516ecba/AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.support:recyclerview-v7:27.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/8c2000588168447256395a4d7bb3d6bc/AndroidManifest.xml:17:1-22:12
@@ -17,20 +17,20 @@ MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/astervaldemoro/.
 MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/6d964b0203e856719f2254cde65d38b6/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/a5a063fa195fabed36af16b37438dc91/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.0] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/4afdb832dcfcc8b3e310cc8777f5f199/AndroidManifest.xml:17:1-22:12
-INJECTED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml:2:1-25:12
-INJECTED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml:2:1-25:12
-INJECTED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml:2:1-25:12
+INJECTED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml:2:1-26:12
+INJECTED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml:2:1-26:12
+INJECTED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml:2:1-26:12
 	package
 		ADDED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml:3:5-44
 		INJECTED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml
-		ADDED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml:2:1-25:12
+		ADDED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml:2:1-26:12
 		INJECTED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml
-		ADDED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml:2:1-25:12
+		ADDED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml:2:1-26:12
 		INJECTED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml:2:11-69
@@ -39,7 +39,7 @@ ADDED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifes
 	android:name
 		ADDED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml:5:22-64
 application
-ADDED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml:7:5-23:19
+ADDED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml:7:5-24:19
 MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/02717991326201e31376c9ef7516ecba/AndroidManifest.xml:9:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/02717991326201e31376c9ef7516ecba/AndroidManifest.xml:9:5-20
 	android:supportsRtl
@@ -55,25 +55,27 @@ MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/aste
 	android:theme
 		ADDED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml:13:9-40
 activity#co.asterv.popularmoviesstage1.MainActivity
-ADDED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml:14:9-20:20
+ADDED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml:14:9-21:20
+	android:launchMode
+		ADDED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml:15:13-43
 	android:name
 		ADDED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml:14:19-47
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml:15:13-19:29
+ADDED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml:16:13-20:29
 action#android.intent.action.MAIN
-ADDED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml:16:17-69
+ADDED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml:17:17-69
 	android:name
-		ADDED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml:16:25-66
+		ADDED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml:17:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml:18:17-77
+ADDED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml:19:17-77
 	android:name
-		ADDED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml:18:27-74
+		ADDED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml:19:27-74
 activity#co.asterv.popularmoviesstage1.MovieDetails
-ADDED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml:21:9-22:68
+ADDED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml:22:9-23:68
 	android:parentActivityName
-		ADDED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml:22:13-56
+		ADDED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml:23:13-56
 	android:name
-		ADDED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml:21:19-47
+		ADDED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml:22:19-47
 uses-sdk
 INJECTED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml

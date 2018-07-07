@@ -22,7 +22,6 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> 
         this.mMovies = mMovies;
 
         if (mContext == null) {
-            Log.d("Context", "issue");
             try{
                 Thread.sleep(1000);
             } catch(InterruptedException exception){
