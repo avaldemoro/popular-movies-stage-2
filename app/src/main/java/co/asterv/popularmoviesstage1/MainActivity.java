@@ -37,8 +37,6 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private RecyclerView.LayoutManager mLayoutManager;
 
-    public static final int OPERATION_SEARCH_LOADER = 22;
-
     Movie[] movies;
     ImageAdapter mImageAdapter;
 

@@ -15,7 +15,6 @@ import org.w3c.dom.Text;
 import co.asterv.popularmoviesstage1.model.Movie;
 
 public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ViewHolder> {
-    private static ConstraintLayout mConstraintLayout;
     private Movie[] movies;
     private TextView authorTV;
     private TextView contentsTV;
@@ -33,11 +32,12 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ViewHolder
         TextView contentsTV;
         Button reviewButton;
 
-        public ViewHolder(View itemView) {
+        public ViewHolder(ConstraintLayout itemView) {
             super (itemView);
 
             authorTV = (TextView) itemView.findViewById (R.id.reviewAuthorTextView);
             contentsTV = (TextView) itemView.findViewById (R.id.reviewContentTextView);
+            reviewButton = (Button) itemView.findViewById (R.id.fullReviewButton);
         }
         // each data item is just a string in this case
 
@@ -59,8 +59,9 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ViewHolder
     public void onBindViewHolder(ViewHolder holder, int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        holder.authorTV.setText(movies[position].getReviewAuthor());
-        holder.contentsTV.setText (movies[position].getReviewContents());
+        holder.authorTV.setText(String.valueOf(movies[position].getReviewAuthor()));
+        holder.contentsTV.setText (String.valueOf (movies[position].getReviewContents()));
+        System.out.print(String.valueOf (movies[position].getReviewAuthor()));
     }
 
     // Return the size of your dataset (invoked by the layout manager)

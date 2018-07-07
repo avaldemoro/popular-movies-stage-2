@@ -38,8 +38,8 @@ public class Movie implements Parcelable{
     public void setTrailerPath(String trailerPath) { this.trailerPath = trailerPath; }
     public void setMovieId(int movieId) { this.movieId = movieId; }
     public void setReviewAuthor(String reviewAuthor) { this.reviewAuthor = reviewAuthor; }
-    public void setReviewContents(String reviewContents) { this.reviewAuthor = reviewContents; }
-    public void setReviewUrl(String reviewUrl) { this.reviewAuthor = reviewUrl; }
+    public void setReviewContents(String reviewContents) { this.reviewContents = reviewContents; }
+    public void setReviewUrl(String reviewUrl) { this.reviewUrl = reviewUrl; }
 
     // GETTER METHODS
     public String getOriginalTitle() {

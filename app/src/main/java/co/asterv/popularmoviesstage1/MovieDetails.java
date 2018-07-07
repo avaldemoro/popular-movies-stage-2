@@ -24,6 +24,7 @@ import com.squareup.picasso.Picasso;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -34,14 +35,17 @@ import co.asterv.popularmoviesstage1.utils.Constants;
 import co.asterv.popularmoviesstage1.utils.JsonUtils;
 
 public class MovieDetails extends AppCompatActivity {
-    private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mReviewAdapter;
-    private RecyclerView.LayoutManager mLayoutManager;
+    RecyclerView mRecyclerView;
+    ReviewAdapter mReviewAdapter;
+    TextView reviewLabel;
+    View divider;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate (savedInstanceState);
         setContentView (R.layout.activity_movie_details);
+
         android.support.v7.app.ActionBar actionBar = this.getSupportActionBar ();
         if(actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled (true);
@@ -54,16 +58,15 @@ public class MovieDetails extends AppCompatActivity {
 
         Movie movie = intent.getParcelableExtra("movie");
 
-        mRecyclerView = (RecyclerView) findViewById(R.id.reviewsRecyclerView);
 
-        // use a linear layout manager
-        mLayoutManager = new LinearLayoutManager (this);
-        mRecyclerView.setLayoutManager(mLayoutManager);
 
         setupDetailsUI (movie);
 
     }
-
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState (outState);
+    }
     public boolean onOptionsSelectedItem(MenuItem item) {
         int id = item.getItemId ();
         if (id == android.R.id.home) {
@@ -77,7 +80,6 @@ public class MovieDetails extends AppCompatActivity {
         Toast.makeText(this, "Something went wrong.", Toast.LENGTH_SHORT).show();
     }
 
-    @SuppressLint("SetTextI18n")
     private void setupDetailsUI(Movie movie) {
         TextView originalTitleTV = findViewById (R.id.titleTextView);
         TextView ratingTV = findViewById (R.id.ratingTextView);
@@ -85,6 +87,14 @@ public class MovieDetails extends AppCompatActivity {
         TextView overviewTV = findViewById (R.id.overviewTextView);
         ImageView posterIV = findViewById (R.id.posterImageView);
         Button trailerBtn = findViewById (R.id.watchTrailerBtn);
+
+        RecyclerView.LayoutManager mLayoutManager;
+
+        mRecyclerView = (RecyclerView) findViewById(R.id.reviewsRecyclerView);
+
+        // use a linear layout manager
+        mLayoutManager = new LinearLayoutManager(this);
+        mRecyclerView.setLayoutManager(mLayoutManager);
 
         // TITLE
         originalTitleTV.setText(movie.getOriginalTitle());
@@ -108,7 +118,6 @@ public class MovieDetails extends AppCompatActivity {
 
         // TRAILER BUTTON
         new TrailerButtonAsyncTask (trailerBtn).execute(String.valueOf(movie.getMovieId ()), Constants.VIDEO_QUERY_PARAM);
-        System.out.print("HELLO!!!" + movie.getMovieId ());
 
         new ReviewsAsyncTask ().execute(String.valueOf(movie.getMovieId ()), Constants.REVIEW_URL_QUERY_PARAM);
     }
@@ -196,7 +205,16 @@ public class MovieDetails extends AppCompatActivity {
         protected void onPostExecute(Movie[] movies) {
             // specify an adapter
             mReviewAdapter = new ReviewAdapter(movies);
-            mRecyclerView.setAdapter(mReviewAdapter);
+            if(mReviewAdapter.getItemCount () == -1) {
+                // If there's no reviews, make the label and divider for the reviews visibility to none
+                reviewLabel = findViewById (R.id.textView);
+                divider = findViewById (R.id.divider2);
+                reviewLabel.setVisibility (TextView.GONE);
+                divider.setVisibility (View.GONE);
+            } else {
+                mRecyclerView.setAdapter(mReviewAdapter);
+            }
+
         }
     }
 
