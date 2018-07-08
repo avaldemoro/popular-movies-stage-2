@@ -58,8 +58,6 @@ public class MovieDetails extends AppCompatActivity {
 
         Movie movie = intent.getParcelableExtra("movie");
 
-
-
         setupDetailsUI (movie);
 
     }
@@ -67,6 +65,7 @@ public class MovieDetails extends AppCompatActivity {
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState (outState);
     }
+
     public boolean onOptionsSelectedItem(MenuItem item) {
         int id = item.getItemId ();
         if (id == android.R.id.home) {
@@ -87,6 +86,7 @@ public class MovieDetails extends AppCompatActivity {
         TextView overviewTV = findViewById (R.id.overviewTextView);
         ImageView posterIV = findViewById (R.id.posterImageView);
         Button trailerBtn = findViewById (R.id.watchTrailerBtn);
+        Button favoriteBtn = findViewById (R.id.favoritesBtn);
 
         RecyclerView.LayoutManager mLayoutManager;
 
@@ -119,12 +119,16 @@ public class MovieDetails extends AppCompatActivity {
         // TRAILER BUTTON
         new TrailerButtonAsyncTask (trailerBtn).execute(String.valueOf(movie.getMovieId ()), Constants.VIDEO_QUERY_PARAM);
 
+        // LOAD REVIEWS
         new ReviewsAsyncTask ().execute(String.valueOf(movie.getMovieId ()), Constants.REVIEW_URL_QUERY_PARAM);
+
+        // BUTTON
+        favoriteBtn.setOnClickListener((View v) -> {
+            favoriteBtn.setText("Favorited!");
+        });
     }
 
-    /***
-     * ASYNC TASK FOR THE "WATCH TRAILER" BUTTON
-     ***/
+    /*** ASYNC TASK FOR THE "WATCH TRAILER" BUTTON ***/
     private class TrailerButtonAsyncTask extends AsyncTask<String, Void, String> {
         private final Button button;
         String trailerKey = null;
@@ -174,10 +178,7 @@ public class MovieDetails extends AppCompatActivity {
         }
     }
 
-    /***
-     * METHOD FOR YT VIDEO INTENT.
-     * https://stackoverflow.com/questions/574195/android-youtube-app-play-video-intent
-     ***/
+    /*** YT VIDEO INTENT. https://stackoverflow.com/questions/574195/android-youtube-app-play-video-intent ***/
     public static void watchYoutubeVideo(Context context, String id){
         Intent appIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(Constants.YOUTUBE_APP_BASE + id));
         Intent webIntent = new Intent(Intent.ACTION_VIEW,
@@ -190,6 +191,7 @@ public class MovieDetails extends AppCompatActivity {
         }
     }
 
+    /*** ASYNC TASK TO FETCH REVIEWS ***/
     private class ReviewsAsyncTask extends AsyncTask<String, Void, Movie[]> {
         @Override
         protected Movie[] doInBackground(String... strings) {
@@ -204,7 +206,7 @@ public class MovieDetails extends AppCompatActivity {
         }
         protected void onPostExecute(Movie[] movies) {
             // specify an adapter
-            mReviewAdapter = new ReviewAdapter(movies);
+            mReviewAdapter = new ReviewAdapter(movies, getApplicationContext ());
             if(mReviewAdapter.getItemCount () == -1) {
                 // If there's no reviews, make the label and divider for the reviews visibility to none
                 reviewLabel = findViewById (R.id.textView);
@@ -218,6 +220,7 @@ public class MovieDetails extends AppCompatActivity {
         }
     }
 
+    /*** ADD REVIEW DATA TO MOVIE OBJECT ***/
     public Movie[] setMovieDataToArray(String jsonResults) throws JSONException {
         JSONObject root = new JSONObject(jsonResults);
         JSONArray resultsArray = root.getJSONArray (Constants.RESULTS_QUERY_PARAM);
