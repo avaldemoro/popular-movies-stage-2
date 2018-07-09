@@ -1,5 +1,6 @@
 package co.asterv.popularmoviesstage1;
 
+import co.asterv.popularmoviesstage1.database.AppDatabase;
 import co.asterv.popularmoviesstage1.utils.Constants;
 import co.asterv.popularmoviesstage1.utils.JsonUtils;
 import co.asterv.popularmoviesstage1.model.Movie;
@@ -8,6 +9,7 @@ import android.annotation.SuppressLint;
 import android.app.ActionBar;
 import android.app.LoaderManager;
 import android.content.AsyncTaskLoader;
+import android.content.Context;
 import android.content.Intent;
 import android.content.Loader;
 import android.os.AsyncTask;
@@ -17,6 +19,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.AttributeSet;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -36,6 +39,7 @@ import static android.widget.AdapterView.*;
 public class MainActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private RecyclerView.LayoutManager mLayoutManager;
+    private AppDatabase mDb;
 
     Movie[] movies;
     ImageAdapter mImageAdapter;
@@ -50,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Using a Grid Layout Manager
         mLayoutManager = new GridLayoutManager(this, Constants.GRID_NUM_OF_COLUMNS);
+        mRecyclerView.getRecycledViewPool ().clear ();
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         android.support.v7.app.ActionBar actionBar = this.getSupportActionBar ();
@@ -64,6 +69,15 @@ public class MainActivity extends AppCompatActivity {
         } else {
             Toast.makeText(getApplicationContext(), Constants.NO_INTERNET_TEXT, Constants.TOAST_DURATION).show();
         }
+        mDb = AppDatabase.getInstance (getApplicationContext ());
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume ();
+
+        //mImageAdapter.setMovies (mDb.movieDao ().loadAllMovies ());
+
 
     }
 
@@ -84,12 +98,26 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId ();
         if (id == R.id.popular_setting) {
+
             new FetchDataAsyncTask ().execute(Constants.POPULAR_QUERY_PARAM);
         } else if (id == R.id.top_rated_setting) {
             new FetchDataAsyncTask().execute(Constants.TOP_RATED_QUERY_PARAM);
         } else {
-            // TODO: Add in favorite movies intent here
-            new FetchDataAsyncTask().execute(Constants.POPULAR_QUERY_PARAM);
+            // TODO: IF FAVORITES IS CLICKED
+            AppExecutor.getInstance ().diskIO ().execute (new Runnable() {
+                @Override
+                public void run() {
+                    runOnUiThread(new Runnable() {
+                        final Movie[] movies = mDb.movieDao ().loadAllMovies ();
+                        @Override
+                        public void run() {
+                            mImageAdapter.notifyDataSetChanged ();
+                            mImageAdapter.setMovies (movies);
+                        }
+                    });
+                }
+
+            });
         }
 
         return super.onOptionsItemSelected (item);
@@ -171,4 +199,8 @@ public class MainActivity extends AppCompatActivity {
 
         return false;
     }
+    /**
+     * No Predictive Animations GridLayoutManager
+     */
+
 }

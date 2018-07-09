@@ -30,6 +30,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import co.asterv.popularmoviesstage1.database.AppDatabase;
 import co.asterv.popularmoviesstage1.model.Movie;
 import co.asterv.popularmoviesstage1.utils.Constants;
 import co.asterv.popularmoviesstage1.utils.JsonUtils;
@@ -39,7 +40,9 @@ public class MovieDetails extends AppCompatActivity {
     ReviewAdapter mReviewAdapter;
     TextView reviewLabel;
     View divider;
-
+    Movie movie;
+    Button favoriteBtn;
+    private AppDatabase mDb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,9 +59,11 @@ public class MovieDetails extends AppCompatActivity {
             closeOnError();
         }
 
-        Movie movie = intent.getParcelableExtra("movie");
+        movie = intent.getParcelableExtra("movie");
 
         setupDetailsUI (movie);
+
+        mDb = AppDatabase.getInstance (getApplicationContext ());
 
     }
     @Override
@@ -86,7 +91,7 @@ public class MovieDetails extends AppCompatActivity {
         TextView overviewTV = findViewById (R.id.overviewTextView);
         ImageView posterIV = findViewById (R.id.posterImageView);
         Button trailerBtn = findViewById (R.id.watchTrailerBtn);
-        Button favoriteBtn = findViewById (R.id.favoritesBtn);
+        favoriteBtn = findViewById (R.id.favoritesBtn);
 
         RecyclerView.LayoutManager mLayoutManager;
 
@@ -100,7 +105,7 @@ public class MovieDetails extends AppCompatActivity {
         originalTitleTV.setText(movie.getOriginalTitle());
 
         // VOTER AVERAGE / RATING
-        ratingTV.setText (String.valueOf(movie.getVoterAverage ()) + " / 10");
+        ratingTV.setText (String.valueOf(movie.getVoterAverage ()) + Constants.OUT_OF_RATING_STRING);
 
         // IMAGE
         Picasso.with(this)
@@ -125,6 +130,7 @@ public class MovieDetails extends AppCompatActivity {
         // BUTTON
         favoriteBtn.setOnClickListener((View v) -> {
             favoriteBtn.setText("Favorited!");
+            onFavoriteButtonClicked ();
         });
     }
 
@@ -239,5 +245,27 @@ public class MovieDetails extends AppCompatActivity {
             movies[i].setReviewUrl (movieInfo.getString (Constants.REVIEW_URL_PARAM));
         }
         return movies;
+    }
+
+    /*** FAVORITE MOVIE BUTTON IS CALLED WHEN "ADD TO FAVORITES" BUTTON IS CLICKED***/
+    public void onFavoriteButtonClicked() {
+        final Movie movie = getIntent().getExtras ().getParcelable ("movie");
+
+        AppExecutor.getInstance ().diskIO ().execute (new Runnable() {
+
+            @Override
+            public void run() {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        mDb.movieDao ().insertMovie (movie);
+                        favoriteBtn.setText("Favorited!");
+                        finish();
+                    }
+                });
+
+
+            }
+        });
     }
 }

@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 
 public class JsonUtils {
-    public static URL buildUrl(String[] query) throws MalformedURLException {
+    public static URL buildUrl(String[] query) {
         Uri builtUri = Uri.parse(Constants.MOVIEDB_BASE_URL).buildUpon()
                 .appendPath(query[0])
                 .appendQueryParameter(Constants.API_KEY_QUERY_PARAM, Constants.API_KEY)
@@ -25,7 +25,7 @@ public class JsonUtils {
         return url;
     }
 
-    public static URL buildMovieIdUrl(String id, String query) throws MalformedURLException {
+    public static URL buildMovieIdUrl(String id, String query) {
         Uri builtUri = Uri.parse(Constants.MOVIEDB_BASE_URL).buildUpon()
                 .appendPath(id)
                 .appendPath(query)

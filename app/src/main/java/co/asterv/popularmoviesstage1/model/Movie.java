@@ -1,17 +1,28 @@
 package co.asterv.popularmoviesstage1.model;
 
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.Ignore;
+import android.arch.persistence.room.Index;
+import android.arch.persistence.room.Insert;
+import android.arch.persistence.room.OnConflictStrategy;
+import android.arch.persistence.room.PrimaryKey;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.support.annotation.NonNull;
+
 import co.asterv.popularmoviesstage1.utils.Constants;
 
-
+@Entity(tableName = "movie")
 public class Movie implements Parcelable{
+
+    @PrimaryKey(autoGenerate = true)
+    private int dbMovieId;
+    private int movieId;
     private String originalTitle;
     private String posterPath;
     private String overview;
     private String releaseDate;
     private Double voterAverage;
-    private int movieId;
     private String trailerPath;
     private String reviewAuthor;
     private String reviewContents;
@@ -20,6 +31,7 @@ public class Movie implements Parcelable{
     public Movie() { }
 
     // SETTER METHODS
+    public void setDbMovieId(int dbMovieId) {this.dbMovieId = movieId; }
     public void setOriginalTitle(String originalTitle) {
         this.originalTitle = originalTitle;
     }
@@ -42,6 +54,7 @@ public class Movie implements Parcelable{
     public void setReviewUrl(String reviewUrl) { this.reviewUrl = reviewUrl; }
 
     // GETTER METHODS
+    public int getDbMovieId() { return movieId; }
     public String getOriginalTitle() {
         return originalTitle;
     }
@@ -82,7 +95,8 @@ public class Movie implements Parcelable{
         dest.writeString (reviewUrl);
     }
 
-    public Movie(Parcel parcel) {
+    @Ignore
+    private Movie(Parcel parcel) {
         originalTitle = parcel.readString();
         posterPath = parcel.readString();
         overview = parcel.readString();
@@ -95,6 +109,7 @@ public class Movie implements Parcelable{
         reviewUrl = parcel.readString ();
     }
 
+    @Ignore
     public static final Parcelable.Creator<Movie> CREATOR = new Parcelable.Creator<Movie>() {
         public Movie createFromParcel(Parcel src) {
             return new Movie(src);

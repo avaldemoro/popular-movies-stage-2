@@ -9,10 +9,9 @@ import co.asterv.popularmoviesstage1.BuildConfig;
 
 public class Constants {
 
-    private final int SEARCH_LAODER = 22;
-
     public final static int GRID_NUM_OF_COLUMNS = 2;
     public final static int TOAST_DURATION = 400;
+    public final static String OUT_OF_RATING_STRING = " / 10";
 
     /* ERROR MESSAGES */
     public final static String NO_INTERNET_TEXT = "Oh no! No internet connection.";
