@@ -1,4 +1,4 @@
-#Mon Jul 09 10:45:06 EDT 2018
-base.0=/Users/astervaldemoro/PopularMoviesStage2/app/build/intermediates/transforms/dexMerger/debug/96
+#Mon Jul 09 18:14:55 EDT 2018
+base.0=/Users/astervaldemoro/PopularMoviesStage2/app/build/intermediates/transforms/dexMerger/debug/2
 path.0=classes.dex
 renamed.0=classes.dex

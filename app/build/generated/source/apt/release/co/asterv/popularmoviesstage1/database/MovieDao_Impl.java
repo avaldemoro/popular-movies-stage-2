@@ -27,125 +27,127 @@ public class MovieDao_Impl implements MovieDao {
     this.__insertionAdapterOfMovie = new EntityInsertionAdapter<Movie>(__db) {
       @Override
       public String createQuery() {
-        return "INSERT OR ABORT INTO `movie`(`movieId`,`originalTitle`,`posterPath`,`overview`,`releaseDate`,`voterAverage`,`trailerPath`,`reviewAuthor`,`reviewContents`,`reviewUrl`) VALUES (nullif(?, 0),?,?,?,?,?,?,?,?,?)";
+        return "INSERT OR IGNORE INTO `movie`(`dbMovieId`,`movieId`,`originalTitle`,`posterPath`,`overview`,`releaseDate`,`voterAverage`,`trailerPath`,`reviewAuthor`,`reviewContents`,`reviewUrl`) VALUES (nullif(?, 0),?,?,?,?,?,?,?,?,?,?)";
       }
 
       @Override
       public void bind(SupportSQLiteStatement stmt, Movie value) {
-        stmt.bindLong(1, value.getMovieId());
+        stmt.bindLong(1, value.getDbMovieId());
+        stmt.bindLong(2, value.getMovieId());
         if (value.getOriginalTitle() == null) {
-          stmt.bindNull(2);
-        } else {
-          stmt.bindString(2, value.getOriginalTitle());
-        }
-        if (value.getPosterPath() == null) {
           stmt.bindNull(3);
         } else {
-          stmt.bindString(3, value.getPosterPath());
+          stmt.bindString(3, value.getOriginalTitle());
         }
-        if (value.getOverview() == null) {
+        if (value.getPosterPath() == null) {
           stmt.bindNull(4);
         } else {
-          stmt.bindString(4, value.getOverview());
+          stmt.bindString(4, value.getPosterPath());
         }
-        if (value.getReleaseDate() == null) {
+        if (value.getOverview() == null) {
           stmt.bindNull(5);
         } else {
-          stmt.bindString(5, value.getReleaseDate());
+          stmt.bindString(5, value.getOverview());
         }
-        if (value.getVoterAverage() == null) {
+        if (value.getReleaseDate() == null) {
           stmt.bindNull(6);
         } else {
-          stmt.bindDouble(6, value.getVoterAverage());
+          stmt.bindString(6, value.getReleaseDate());
         }
-        if (value.getTrailerPath() == null) {
+        if (value.getVoterAverage() == null) {
           stmt.bindNull(7);
         } else {
-          stmt.bindString(7, value.getTrailerPath());
+          stmt.bindDouble(7, value.getVoterAverage());
         }
-        if (value.getReviewAuthor() == null) {
+        if (value.getTrailerPath() == null) {
           stmt.bindNull(8);
         } else {
-          stmt.bindString(8, value.getReviewAuthor());
+          stmt.bindString(8, value.getTrailerPath());
         }
-        if (value.getReviewContents() == null) {
+        if (value.getReviewAuthor() == null) {
           stmt.bindNull(9);
         } else {
-          stmt.bindString(9, value.getReviewContents());
+          stmt.bindString(9, value.getReviewAuthor());
         }
-        if (value.getReviewUrl() == null) {
+        if (value.getReviewContents() == null) {
           stmt.bindNull(10);
         } else {
-          stmt.bindString(10, value.getReviewUrl());
+          stmt.bindString(10, value.getReviewContents());
+        }
+        if (value.getReviewUrl() == null) {
+          stmt.bindNull(11);
+        } else {
+          stmt.bindString(11, value.getReviewUrl());
         }
       }
     };
     this.__deletionAdapterOfMovie = new EntityDeletionOrUpdateAdapter<Movie>(__db) {
       @Override
       public String createQuery() {
-        return "DELETE FROM `movie` WHERE `movieId` = ?";
+        return "DELETE FROM `movie` WHERE `dbMovieId` = ?";
       }
 
       @Override
       public void bind(SupportSQLiteStatement stmt, Movie value) {
-        stmt.bindLong(1, value.getMovieId());
+        stmt.bindLong(1, value.getDbMovieId());
       }
     };
     this.__updateAdapterOfMovie = new EntityDeletionOrUpdateAdapter<Movie>(__db) {
       @Override
       public String createQuery() {
-        return "UPDATE OR REPLACE `movie` SET `movieId` = ?,`originalTitle` = ?,`posterPath` = ?,`overview` = ?,`releaseDate` = ?,`voterAverage` = ?,`trailerPath` = ?,`reviewAuthor` = ?,`reviewContents` = ?,`reviewUrl` = ? WHERE `movieId` = ?";
+        return "UPDATE OR REPLACE `movie` SET `dbMovieId` = ?,`movieId` = ?,`originalTitle` = ?,`posterPath` = ?,`overview` = ?,`releaseDate` = ?,`voterAverage` = ?,`trailerPath` = ?,`reviewAuthor` = ?,`reviewContents` = ?,`reviewUrl` = ? WHERE `dbMovieId` = ?";
       }
 
       @Override
       public void bind(SupportSQLiteStatement stmt, Movie value) {
-        stmt.bindLong(1, value.getMovieId());
+        stmt.bindLong(1, value.getDbMovieId());
+        stmt.bindLong(2, value.getMovieId());
         if (value.getOriginalTitle() == null) {
-          stmt.bindNull(2);
-        } else {
-          stmt.bindString(2, value.getOriginalTitle());
-        }
-        if (value.getPosterPath() == null) {
           stmt.bindNull(3);
         } else {
-          stmt.bindString(3, value.getPosterPath());
+          stmt.bindString(3, value.getOriginalTitle());
         }
-        if (value.getOverview() == null) {
+        if (value.getPosterPath() == null) {
           stmt.bindNull(4);
         } else {
-          stmt.bindString(4, value.getOverview());
+          stmt.bindString(4, value.getPosterPath());
         }
-        if (value.getReleaseDate() == null) {
+        if (value.getOverview() == null) {
           stmt.bindNull(5);
         } else {
-          stmt.bindString(5, value.getReleaseDate());
+          stmt.bindString(5, value.getOverview());
         }
-        if (value.getVoterAverage() == null) {
+        if (value.getReleaseDate() == null) {
           stmt.bindNull(6);
         } else {
-          stmt.bindDouble(6, value.getVoterAverage());
+          stmt.bindString(6, value.getReleaseDate());
         }
-        if (value.getTrailerPath() == null) {
+        if (value.getVoterAverage() == null) {
           stmt.bindNull(7);
         } else {
-          stmt.bindString(7, value.getTrailerPath());
+          stmt.bindDouble(7, value.getVoterAverage());
         }
-        if (value.getReviewAuthor() == null) {
+        if (value.getTrailerPath() == null) {
           stmt.bindNull(8);
         } else {
-          stmt.bindString(8, value.getReviewAuthor());
+          stmt.bindString(8, value.getTrailerPath());
         }
-        if (value.getReviewContents() == null) {
+        if (value.getReviewAuthor() == null) {
           stmt.bindNull(9);
         } else {
-          stmt.bindString(9, value.getReviewContents());
+          stmt.bindString(9, value.getReviewAuthor());
         }
-        if (value.getReviewUrl() == null) {
+        if (value.getReviewContents() == null) {
           stmt.bindNull(10);
         } else {
-          stmt.bindString(10, value.getReviewUrl());
+          stmt.bindString(10, value.getReviewContents());
         }
-        stmt.bindLong(11, value.getMovieId());
+        if (value.getReviewUrl() == null) {
+          stmt.bindNull(11);
+        } else {
+          stmt.bindString(11, value.getReviewUrl());
+        }
+        stmt.bindLong(12, value.getDbMovieId());
       }
     };
   }
@@ -189,6 +191,7 @@ public class MovieDao_Impl implements MovieDao {
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
     final Cursor _cursor = __db.query(_statement);
     try {
+      final int _cursorIndexOfDbMovieId = _cursor.getColumnIndexOrThrow("dbMovieId");
       final int _cursorIndexOfMovieId = _cursor.getColumnIndexOrThrow("movieId");
       final int _cursorIndexOfOriginalTitle = _cursor.getColumnIndexOrThrow("originalTitle");
       final int _cursorIndexOfPosterPath = _cursor.getColumnIndexOrThrow("posterPath");
@@ -204,6 +207,9 @@ public class MovieDao_Impl implements MovieDao {
       while(_cursor.moveToNext()) {
         final Movie _item;
         _item = new Movie();
+        final int _tmpDbMovieId;
+        _tmpDbMovieId = _cursor.getInt(_cursorIndexOfDbMovieId);
+        _item.setDbMovieId(_tmpDbMovieId);
         final int _tmpMovieId;
         _tmpMovieId = _cursor.getInt(_cursorIndexOfMovieId);
         _item.setMovieId(_tmpMovieId);

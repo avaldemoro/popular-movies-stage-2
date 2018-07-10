@@ -30,6 +30,8 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import javax.annotation.Nullable;
+
 import co.asterv.popularmoviesstage1.database.AppDatabase;
 import co.asterv.popularmoviesstage1.model.Movie;
 import co.asterv.popularmoviesstage1.utils.Constants;
@@ -249,23 +251,13 @@ public class MovieDetails extends AppCompatActivity {
 
     /*** FAVORITE MOVIE BUTTON IS CALLED WHEN "ADD TO FAVORITES" BUTTON IS CLICKED***/
     public void onFavoriteButtonClicked() {
-        final Movie movie = getIntent().getExtras ().getParcelable ("movie");
+        final Movie movie = getIntent().getExtras().getParcelable ( "movie");
 
-        AppExecutor.getInstance ().diskIO ().execute (new Runnable() {
+        AppExecutor.getInstance ().diskIO ().execute (() -> runOnUiThread(() -> {
+            mDb.movieDao ().insertMovie (movie);
 
-            @Override
-            public void run() {
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        mDb.movieDao ().insertMovie (movie);
-                        favoriteBtn.setText("Favorited!");
-                        finish();
-                    }
-                });
-
-
-            }
-        });
+            finish();
+            favoriteBtn.setText("Favorited!");
+        }));
     }
 }

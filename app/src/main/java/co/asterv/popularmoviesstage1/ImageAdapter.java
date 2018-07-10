@@ -1,5 +1,6 @@
 package co.asterv.popularmoviesstage1;
 import co.asterv.popularmoviesstage1.model.Movie;
+import co.asterv.popularmoviesstage1.utils.Constants;
 
 
 import android.content.Context;
@@ -57,10 +58,12 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> 
     @Override
     // Replace the contents of a view (Invoked by the layout manager)
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Picasso.with(mContext)
-                .load(mMovies[position].getPosterPath())
+        Picasso picasso = Picasso.with(mContext);
+        picasso.setLoggingEnabled(true);
+
+        picasso.load(mMovies[position].getPosterPath())
                 .fit()
-                .error(R.mipmap.ic_launcher_round)
+                .error(R.mipmap.ic_launcher)
                 .placeholder(R.mipmap.ic_launcher_round)
                 .into((ImageView) holder.mImageView.findViewById (R.id.image_view));
 

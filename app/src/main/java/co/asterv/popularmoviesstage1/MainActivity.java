@@ -56,10 +56,12 @@ public class MainActivity extends AppCompatActivity {
         mLayoutManager = new GridLayoutManager(this, Constants.GRID_NUM_OF_COLUMNS);
         mRecyclerView.getRecycledViewPool ().clear ();
         mRecyclerView.setLayoutManager(mLayoutManager);
+        mDb = AppDatabase.getInstance (getApplicationContext ());
 
         android.support.v7.app.ActionBar actionBar = this.getSupportActionBar ();
         if(actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled (true);
+
         }
 
         // Check if online
@@ -69,16 +71,12 @@ public class MainActivity extends AppCompatActivity {
         } else {
             Toast.makeText(getApplicationContext(), Constants.NO_INTERNET_TEXT, Constants.TOAST_DURATION).show();
         }
-        mDb = AppDatabase.getInstance (getApplicationContext ());
+
     }
 
     @Override
     protected void onResume() {
         super.onResume ();
-
-        //mImageAdapter.setMovies (mDb.movieDao ().loadAllMovies ());
-
-
     }
 
     @Override
@@ -104,20 +102,14 @@ public class MainActivity extends AppCompatActivity {
             new FetchDataAsyncTask().execute(Constants.TOP_RATED_QUERY_PARAM);
         } else {
             // TODO: IF FAVORITES IS CLICKED
-            AppExecutor.getInstance ().diskIO ().execute (new Runnable() {
+            AppExecutor.getInstance ().diskIO ().execute (() -> runOnUiThread(new Runnable() {
+                final Movie[] movies = mDb.movieDao ().loadAllMovies ();
                 @Override
                 public void run() {
-                    runOnUiThread(new Runnable() {
-                        final Movie[] movies = mDb.movieDao ().loadAllMovies ();
-                        @Override
-                        public void run() {
-                            mImageAdapter.notifyDataSetChanged ();
-                            mImageAdapter.setMovies (movies);
-                        }
-                    });
+                    mImageAdapter.notifyDataSetChanged ();
+                    mImageAdapter.setMovies (movies);
                 }
-
-            });
+            }));
         }
 
         return super.onOptionsItemSelected (item);
@@ -143,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
 
             // Store data in movie object
             movies[i].setOriginalTitle(movieInfo.getString(Constants.ORIGINAL_TITLE_QUERY_PARAM));
-            movies[i].setPosterPath(movieInfo.getString(Constants.POSTER_PATH_QUERY_PARAM));
+            movies[i].setPosterPath(Constants.MOVIEDB_IMAGE_BASE_URL + movieInfo.getString(Constants.POSTER_PATH_QUERY_PARAM));
             movies[i].setOverview(movieInfo.getString(Constants.OVERVIEW_QUERY_PARAM));
             movies[i].setVoterAverage(movieInfo.getDouble(Constants.VOTER_AVERAGE_QUERY_PARAM));
             movies[i].setReleaseDate(movieInfo.getString(Constants.RELEASE_DATE_QUERY_PARAM));

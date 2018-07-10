@@ -113,7 +113,7 @@
         errorLine2="                 ~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/astervaldemoro/PopularMoviesStage2/app/src/main/java/co/asterv/popularmoviesstage1/MainActivity.java"
-            line="134"
+            line="148"
             column="18"/>
     </issue>
 
@@ -129,7 +129,7 @@
         errorLine2="                  ~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/astervaldemoro/PopularMoviesStage2/app/src/main/java/co/asterv/popularmoviesstage1/MovieDetails.java"
-            line="137"
+            line="140"
             column="19"/>
     </issue>
 
@@ -145,7 +145,7 @@
         errorLine2="                  ~~~~~~~~~~~~~~~~">
         <location
             file="/Users/astervaldemoro/PopularMoviesStage2/app/src/main/java/co/asterv/popularmoviesstage1/MovieDetails.java"
-            line="200"
+            line="203"
             column="19"/>
     </issue>
 
@@ -286,7 +286,7 @@
         errorLine2="                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/astervaldemoro/PopularMoviesStage2/app/src/main/java/co/asterv/popularmoviesstage1/MovieDetails.java"
-            line="107"
+            line="110"
             column="27"/>
     </issue>
 
@@ -304,7 +304,25 @@
         errorLine2="                                ~~~~~~~~~~~~">
         <location
             file="/Users/astervaldemoro/PopularMoviesStage2/app/src/main/java/co/asterv/popularmoviesstage1/MovieDetails.java"
-            line="131"
+            line="134"
+            column="33"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="http://developer.android.com/guide/topics/resources/localization.html"
+        urls="http://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="            favoriteBtn.setText(&quot;Favorited!&quot;);"
+        errorLine2="                                ~~~~~~~~~~~~">
+        <location
+            file="/Users/astervaldemoro/PopularMoviesStage2/app/src/main/java/co/asterv/popularmoviesstage1/MovieDetails.java"
+            line="260"
             column="33"/>
     </issue>
 

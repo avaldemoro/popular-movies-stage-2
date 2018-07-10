@@ -95,7 +95,7 @@ public class MovieDao_Impl implements MovieDao {
     this.__updateAdapterOfMovie = new EntityDeletionOrUpdateAdapter<Movie>(__db) {
       @Override
       public String createQuery() {
-        return "UPDATE OR REPLACE `movie` SET `dbMovieId` = ?,`movieId` = ?,`originalTitle` = ?,`posterPath` = ?,`overview` = ?,`releaseDate` = ?,`voterAverage` = ?,`trailerPath` = ?,`reviewAuthor` = ?,`reviewContents` = ?,`reviewUrl` = ? WHERE `dbMovieId` = ?";
+        return "UPDATE OR IGNORE `movie` SET `dbMovieId` = ?,`movieId` = ?,`originalTitle` = ?,`posterPath` = ?,`overview` = ?,`releaseDate` = ?,`voterAverage` = ?,`trailerPath` = ?,`reviewAuthor` = ?,`reviewContents` = ?,`reviewUrl` = ? WHERE `dbMovieId` = ?";
       }
 
       @Override

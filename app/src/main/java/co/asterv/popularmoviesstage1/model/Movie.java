@@ -35,9 +35,7 @@ public class Movie implements Parcelable{
     public void setOriginalTitle(String originalTitle) {
         this.originalTitle = originalTitle;
     }
-    public void setPosterPath(String posterPath) {
-        this.posterPath = posterPath;
-    }
+    public void setPosterPath(String posterPath) { this.posterPath = posterPath; }
     public void setOverview(String overview) {
         this.overview = overview;
     }
@@ -59,7 +57,7 @@ public class Movie implements Parcelable{
         return originalTitle;
     }
     public String getPosterPath() {
-        return Constants.MOVIEDB_IMAGE_BASE_URL + posterPath;
+        return posterPath;
     }
     public String getOverview() {
         return overview;
@@ -95,7 +93,6 @@ public class Movie implements Parcelable{
         dest.writeString (reviewUrl);
     }
 
-    @Ignore
     private Movie(Parcel parcel) {
         originalTitle = parcel.readString();
         posterPath = parcel.readString();
@@ -109,7 +106,6 @@ public class Movie implements Parcelable{
         reviewUrl = parcel.readString ();
     }
 
-    @Ignore
     public static final Parcelable.Creator<Movie> CREATOR = new Parcelable.Creator<Movie>() {
         public Movie createFromParcel(Parcel src) {
             return new Movie(src);

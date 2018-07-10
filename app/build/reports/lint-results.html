@@ -173,10 +173,10 @@ document.getElementById(id).style.display = 'none';
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">Lint Report: 37 warnings</span>
+      <span class="mdl-layout-title">Lint Report: 38 warnings</span>
       <div class="mdl-layout-spacer"></div>
       <nav class="mdl-navigation mdl-layout--large-screen-only">
-Check performed at Mon Jul 09 00:42:36 EDT 2018      </nav>
+Check performed at Mon Jul 09 17:30:55 EDT 2018      </nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
@@ -191,7 +191,7 @@ Check performed at Mon Jul 09 00:42:36 EDT 2018      </nav>
       <a class="mdl-navigation__link" href="#ButtonStyle"><i class="material-icons warning-icon">warning</i>Button should be borderless (2)</a>
       <a class="mdl-navigation__link" href="#GoogleAppIndexingWarning"><i class="material-icons warning-icon">warning</i>Missing support for Firebase App Indexing (1)</a>
       <a class="mdl-navigation__link" href="#ContentDescription"><i class="material-icons warning-icon">warning</i>Image without <code>contentDescription</code> (3)</a>
-      <a class="mdl-navigation__link" href="#SetTextI18n"><i class="material-icons warning-icon">warning</i>TextView Internationalization (2)</a>
+      <a class="mdl-navigation__link" href="#SetTextI18n"><i class="material-icons warning-icon">warning</i>TextView Internationalization (3)</a>
       <a class="mdl-navigation__link" href="#HardcodedText"><i class="material-icons warning-icon">warning</i>Hardcoded text (19)</a>
     </nav>
   </div>
@@ -242,7 +242,7 @@ Check performed at Mon Jul 09 00:42:36 EDT 2018      </nav>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Internationalization">Internationalization</a>
 </td></tr>
 <tr>
-<td class="countColumn">2</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">3</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#SetTextI18n">SetTextI18n</a>: TextView Internationalization</td></tr>
 <tr>
 <td class="countColumn">19</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
@@ -446,33 +446,33 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../src/main/java/co/asterv/popularmoviesstage1/MainActivity.java">../../src/main/java/co/asterv/popularmoviesstage1/MainActivity.java</a>:134</span>: <span class="message">This AsyncTask class should be static or leaks might occur (co.asterv.popularmoviesstage1.MainActivity.FetchDataAsyncTask)</span><br /><pre class="errorlines">
-<span class="lineno"> 131 </span>    }
-<span class="lineno"> 132 </span>
-<span class="lineno"> 133 </span>    <span class="javadoc">/*** FETCH MOVIE DATA ASYNC TASK ***/</span>
-<span class="caretline"><span class="lineno"> 134 </span>    <span class="keyword">public</span> <span class="keyword">class</span> <span class="warning">FetchDataAsyncTask</span> <span class="keyword">extends</span> AsyncTask&lt;String, Void, Movie[]> {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 135 </span>        <span class="keyword">public</span> FetchDataAsyncTask() {
-<span class="lineno"> 136 </span>            <span class="keyword">super</span>();
-<span class="lineno"> 137 </span>        }
+<span class="location"><a href="../../src/main/java/co/asterv/popularmoviesstage1/MainActivity.java">../../src/main/java/co/asterv/popularmoviesstage1/MainActivity.java</a>:148</span>: <span class="message">This AsyncTask class should be static or leaks might occur (co.asterv.popularmoviesstage1.MainActivity.FetchDataAsyncTask)</span><br /><pre class="errorlines">
+<span class="lineno"> 145 </span>    }
+<span class="lineno"> 146 </span>
+<span class="lineno"> 147 </span>    <span class="javadoc">/*** FETCH MOVIE DATA ASYNC TASK ***/</span>
+<span class="caretline"><span class="lineno"> 148 </span>    <span class="keyword">public</span> <span class="keyword">class</span> <span class="warning">FetchDataAsyncTask</span> <span class="keyword">extends</span> AsyncTask&lt;String, Void, Movie[]> {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 149 </span>        <span class="keyword">public</span> FetchDataAsyncTask() {
+<span class="lineno"> 150 </span>            <span class="keyword">super</span>();
+<span class="lineno"> 151 </span>        }
 </pre>
 
-<span class="location"><a href="../../src/main/java/co/asterv/popularmoviesstage1/MovieDetails.java">../../src/main/java/co/asterv/popularmoviesstage1/MovieDetails.java</a>:137</span>: <span class="message">This AsyncTask class should be static or leaks might occur (co.asterv.popularmoviesstage1.MovieDetails.TrailerButtonAsyncTask)</span><br /><pre class="errorlines">
-<span class="lineno"> 134 </span>    }
-<span class="lineno"> 135 </span>
-<span class="lineno"> 136 </span>    <span class="javadoc">/*** ASYNC TASK FOR THE "WATCH TRAILER" BUTTON ***/</span>
-<span class="caretline"><span class="lineno"> 137 </span>    <span class="keyword">private</span> <span class="keyword">class</span> <span class="warning">TrailerButtonAsyncTask</span> <span class="keyword">extends</span> AsyncTask&lt;String, Void, String> {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 138 </span>        <span class="keyword">private</span> <span class="keyword">final</span> Button button;
-<span class="lineno"> 139 </span>        String trailerKey = <span class="keyword">null</span>;
+<span class="location"><a href="../../src/main/java/co/asterv/popularmoviesstage1/MovieDetails.java">../../src/main/java/co/asterv/popularmoviesstage1/MovieDetails.java</a>:140</span>: <span class="message">This AsyncTask class should be static or leaks might occur (co.asterv.popularmoviesstage1.MovieDetails.TrailerButtonAsyncTask)</span><br /><pre class="errorlines">
+<span class="lineno"> 137 </span>    }
+<span class="lineno"> 138 </span>
+<span class="lineno"> 139 </span>    <span class="javadoc">/*** ASYNC TASK FOR THE "WATCH TRAILER" BUTTON ***/</span>
+<span class="caretline"><span class="lineno"> 140 </span>    <span class="keyword">private</span> <span class="keyword">class</span> <span class="warning">TrailerButtonAsyncTask</span> <span class="keyword">extends</span> AsyncTask&lt;String, Void, String> {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 141 </span>        <span class="keyword">private</span> <span class="keyword">final</span> Button button;
+<span class="lineno"> 142 </span>        String trailerKey = <span class="keyword">null</span>;
 </pre>
 
-<span class="location"><a href="../../src/main/java/co/asterv/popularmoviesstage1/MovieDetails.java">../../src/main/java/co/asterv/popularmoviesstage1/MovieDetails.java</a>:200</span>: <span class="message">This AsyncTask class should be static or leaks might occur (co.asterv.popularmoviesstage1.MovieDetails.ReviewsAsyncTask)</span><br /><pre class="errorlines">
-<span class="lineno"> 197 </span>    }
-<span class="lineno"> 198 </span>
-<span class="lineno"> 199 </span>    <span class="javadoc">/*** ASYNC TASK TO FETCH REVIEWS ***/</span>
-<span class="caretline"><span class="lineno"> 200 </span>    <span class="keyword">private</span> <span class="keyword">class</span> <span class="warning">ReviewsAsyncTask</span> <span class="keyword">extends</span> AsyncTask&lt;String, Void, Movie[]> {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 201 </span>        <span class="annotation">@Override</span>
-<span class="lineno"> 202 </span>        <span class="keyword">protected</span> Movie[] doInBackground(String... strings) {
-<span class="lineno"> 203 </span>            <span class="keyword">try</span> {
+<span class="location"><a href="../../src/main/java/co/asterv/popularmoviesstage1/MovieDetails.java">../../src/main/java/co/asterv/popularmoviesstage1/MovieDetails.java</a>:203</span>: <span class="message">This AsyncTask class should be static or leaks might occur (co.asterv.popularmoviesstage1.MovieDetails.ReviewsAsyncTask)</span><br /><pre class="errorlines">
+<span class="lineno"> 200 </span>    }
+<span class="lineno"> 201 </span>
+<span class="lineno"> 202 </span>    <span class="javadoc">/*** ASYNC TASK TO FETCH REVIEWS ***/</span>
+<span class="caretline"><span class="lineno"> 203 </span>    <span class="keyword">private</span> <span class="keyword">class</span> <span class="warning">ReviewsAsyncTask</span> <span class="keyword">extends</span> AsyncTask&lt;String, Void, Movie[]> {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 204 </span>        <span class="annotation">@Override</span>
+<span class="lineno"> 205 </span>        <span class="keyword">protected</span> Movie[] doInBackground(String... strings) {
+<span class="lineno"> 206 </span>            <span class="keyword">try</span> {
 </pre>
 
 </div>
@@ -733,25 +733,34 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../src/main/java/co/asterv/popularmoviesstage1/MovieDetails.java">../../src/main/java/co/asterv/popularmoviesstage1/MovieDetails.java</a>:107</span>: <span class="message">Do not concatenate text displayed with <code>setText</code>. Use resource string with placeholders.</span><br /><pre class="errorlines">
-<span class="lineno"> 104 </span>  originalTitleTV.setText(movie.getOriginalTitle());
-<span class="lineno"> 105 </span>
-<span class="lineno"> 106 </span>  <span class="comment">// VOTER AVERAGE / RATING</span>
-<span class="caretline"><span class="lineno"> 107 </span>  ratingTV.setText (<span class="warning">String.valueOf(movie.getVoterAverage ()) + Constants.OUT_OF_RATING_STRING</span>);</span>
+<span class="location"><a href="../../src/main/java/co/asterv/popularmoviesstage1/MovieDetails.java">../../src/main/java/co/asterv/popularmoviesstage1/MovieDetails.java</a>:110</span>: <span class="message">Do not concatenate text displayed with <code>setText</code>. Use resource string with placeholders.</span><br /><pre class="errorlines">
+<span class="lineno"> 107 </span>  originalTitleTV.setText(movie.getOriginalTitle());
 <span class="lineno"> 108 </span>
-<span class="lineno"> 109 </span>  <span class="comment">// IMAGE</span>
-<span class="lineno"> 110 </span>  Picasso.with(<span class="keyword">this</span>)
+<span class="lineno"> 109 </span>  <span class="comment">// VOTER AVERAGE / RATING</span>
+<span class="caretline"><span class="lineno"> 110 </span>  ratingTV.setText (<span class="warning">String.valueOf(movie.getVoterAverage ()) + Constants.OUT_OF_RATING_STRING</span>);</span>
+<span class="lineno"> 111 </span>
+<span class="lineno"> 112 </span>  <span class="comment">// IMAGE</span>
+<span class="lineno"> 113 </span>  Picasso.with(<span class="keyword">this</span>)
 </pre>
 
-<span class="location"><a href="../../src/main/java/co/asterv/popularmoviesstage1/MovieDetails.java">../../src/main/java/co/asterv/popularmoviesstage1/MovieDetails.java</a>:131</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
-<span class="lineno"> 128 </span>
-<span class="lineno"> 129 </span>        <span class="comment">// BUTTON</span>
-<span class="lineno"> 130 </span>        favoriteBtn.setOnClickListener((View v) -> {
-<span class="caretline"><span class="lineno"> 131 </span>            favoriteBtn.setText(<span class="warning"><span class="string">"Favorited!"</span></span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 132 </span>            onFavoriteButtonClicked ();
-<span class="lineno"> 133 </span>        });
-<span class="lineno"> 134 </span>    }
+<span class="location"><a href="../../src/main/java/co/asterv/popularmoviesstage1/MovieDetails.java">../../src/main/java/co/asterv/popularmoviesstage1/MovieDetails.java</a>:134</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
+<span class="lineno"> 131 </span>
+<span class="lineno"> 132 </span>        <span class="comment">// BUTTON</span>
+<span class="lineno"> 133 </span>        favoriteBtn.setOnClickListener((View v) -> {
+<span class="caretline"><span class="lineno"> 134 </span>            favoriteBtn.setText(<span class="warning"><span class="string">"Favorited!"</span></span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 135 </span>            onFavoriteButtonClicked ();
+<span class="lineno"> 136 </span>        });
+<span class="lineno"> 137 </span>    }
 </pre>
+
+<span class="location"><a href="../../src/main/java/co/asterv/popularmoviesstage1/MovieDetails.java">../../src/main/java/co/asterv/popularmoviesstage1/MovieDetails.java</a>:260</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
+<span class="lineno"> 257 </span>            mDb.movieDao ().insertMovie (movie);
+<span class="lineno"> 258 </span>
+<span class="lineno"> 259 </span>            finish();
+<span class="caretline"><span class="lineno"> 260 </span>            favoriteBtn.setText(<span class="warning"><span class="string">"Favorited!"</span></span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 261 </span>        }));
+<span class="lineno"> 262 </span>    }
+<span class="lineno"> 263 </span>}</pre>
 
 </div>
 <div class="metadata"><div class="explanation" id="explanationSetTextI18n" style="display: none;">
