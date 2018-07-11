@@ -194,7 +194,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/posterImageView"
                 app:layout_constraintVertical_bias="0.0" />
 
-            <Button
+            <ToggleButton
                 android:id="@+id/favoritesBtn"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"

@@ -1,5 +1,6 @@
 package co.asterv.popularmoviesstage1.database;
 
+import android.arch.lifecycle.LiveData;
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
@@ -20,6 +21,6 @@ public interface MovieDao {
     @Update(onConflict = OnConflictStrategy.IGNORE)
     void updateMovie(Movie movie);
 
-    @Delete
-    void deleteMovie(Movie movie);
+    @Query ("DELETE FROM movie WHERE movieId = :movieId")
+    void deleteMovie(int movieId);
 }

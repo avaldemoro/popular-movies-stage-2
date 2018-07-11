@@ -38,7 +38,7 @@ import java.net.URL;
 
 import static android.widget.AdapterView.*;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
     private RecyclerView mRecyclerView;
     private RecyclerView.LayoutManager mLayoutManager;
     private AppDatabase mDb;
@@ -93,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId ();
@@ -102,23 +103,25 @@ public class MainActivity extends AppCompatActivity {
         } else if (id == R.id.top_rated_setting) {
             new FetchDataAsyncTask().execute(Constants.TOP_RATED_QUERY_PARAM);
         } else {
+
             retrieveMovies ();
         }
 
         return super.onOptionsItemSelected (item);
     }
 
-    private void retrieveMovies() {
+    public void retrieveMovies() {
         AppExecutor.getInstance ().diskIO ().execute (() -> runOnUiThread(new Runnable() {
             final Movie[] movies = mDb.movieDao ().loadAllMovies ();
 
             @Override
             public void run() {
                 mImageAdapter.notifyDataSetChanged ();
-                for (int i = 0; i < movies.length; i++) {
-                    movies[i].setIsFavoriteMovie (true);
-                }
                 mImageAdapter.setMovies (movies);
+
+                for (int i = 0; i < movies.length; i++) {
+                    Log.e("MOVIES " , String.valueOf (movies[i].getOriginalTitle ()) + " " +String.valueOf (movies[i].getIsFavoriteMovie ()) +"\n");
+                }
             }
         }));
     }
