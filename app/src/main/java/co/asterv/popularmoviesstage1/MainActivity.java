@@ -20,12 +20,14 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -71,7 +73,6 @@ public class MainActivity extends AppCompatActivity {
         } else {
             Toast.makeText(getApplicationContext(), Constants.NO_INTERNET_TEXT, Constants.TOAST_DURATION).show();
         }
-
     }
 
     @Override
@@ -101,18 +102,25 @@ public class MainActivity extends AppCompatActivity {
         } else if (id == R.id.top_rated_setting) {
             new FetchDataAsyncTask().execute(Constants.TOP_RATED_QUERY_PARAM);
         } else {
-            // TODO: IF FAVORITES IS CLICKED
-            AppExecutor.getInstance ().diskIO ().execute (() -> runOnUiThread(new Runnable() {
-                final Movie[] movies = mDb.movieDao ().loadAllMovies ();
-                @Override
-                public void run() {
-                    mImageAdapter.notifyDataSetChanged ();
-                    mImageAdapter.setMovies (movies);
-                }
-            }));
+            retrieveMovies ();
         }
 
         return super.onOptionsItemSelected (item);
+    }
+
+    private void retrieveMovies() {
+        AppExecutor.getInstance ().diskIO ().execute (() -> runOnUiThread(new Runnable() {
+            final Movie[] movies = mDb.movieDao ().loadAllMovies ();
+
+            @Override
+            public void run() {
+                mImageAdapter.notifyDataSetChanged ();
+                for (int i = 0; i < movies.length; i++) {
+                    movies[i].setIsFavoriteMovie (true);
+                }
+                mImageAdapter.setMovies (movies);
+            }
+        }));
     }
 
     /*** METHOD TO MAKE STRING OF MOVIE DATA TO AN ARRAY OF MOVIE OBJECTS ***/
@@ -173,6 +181,7 @@ public class MainActivity extends AppCompatActivity {
 
         protected void onPostExecute(Movie[] movies) {
             mImageAdapter = new ImageAdapter(getApplicationContext(), movies);
+
             mRecyclerView.setAdapter(mImageAdapter);
         }
     }
@@ -191,8 +200,4 @@ public class MainActivity extends AppCompatActivity {
 
         return false;
     }
-    /**
-     * No Predictive Animations GridLayoutManager
-     */
-
 }

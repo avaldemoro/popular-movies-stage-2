@@ -59,8 +59,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> 
     // Replace the contents of a view (Invoked by the layout manager)
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Picasso picasso = Picasso.with(mContext);
-        picasso.setLoggingEnabled(true);
-
+        //picasso.setLoggingEnabled(true);
         picasso.load(mMovies[position].getPosterPath())
                 .fit()
                 .error(R.mipmap.ic_launcher)
@@ -80,6 +79,10 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> 
             return -1;
         }
         return mMovies.length;
+    }
+
+    public Movie[] getMovies() {
+        return mMovies;
     }
 
     public void setMovies(Movie[] movies) {

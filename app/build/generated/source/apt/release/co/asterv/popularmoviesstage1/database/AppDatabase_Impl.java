@@ -25,7 +25,7 @@ public class AppDatabase_Impl extends AppDatabase {
 
   @Override
   protected SupportSQLiteOpenHelper createOpenHelper(DatabaseConfiguration configuration) {
-    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(configuration, new RoomOpenHelper.Delegate(6) {
+    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(configuration, new RoomOpenHelper.Delegate(7) {
       @Override
       public void createAllTables(SupportSQLiteDatabase _db) {
         _db.execSQL("CREATE TABLE IF NOT EXISTS `movie` (`dbMovieId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `movieId` INTEGER NOT NULL, `originalTitle` TEXT, `posterPath` TEXT, `overview` TEXT, `releaseDate` TEXT, `voterAverage` REAL, `trailerPath` TEXT, `reviewAuthor` TEXT, `reviewContents` TEXT, `reviewUrl` TEXT)");

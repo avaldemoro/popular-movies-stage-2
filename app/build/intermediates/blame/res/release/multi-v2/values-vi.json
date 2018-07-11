@@ -4,7 +4,7 @@
             "outputFile": "/Users/astervaldemoro/PopularMoviesStage2/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-vi/values-vi.xml",
             "map": [
                 {
-                    "source": "/Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/a3df4aa2ab90dddb6f2f8315061bc82f/res/values-vi/values-vi.xml",
+                    "source": "/Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/0a498f0531a5e4fa0371c2ff4ba7a1d1/res/values-vi/values-vi.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "/Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/6576f07e07f0002190aeb576d32de8ea/res/values-vi/values-vi.xml",
+                    "source": "/Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/7b97e6e2a3770145e7b67a3fcd2fc1c2/res/values-vi/values-vi.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

@@ -4,24 +4,24 @@ ADDED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifes
 INJECTED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml:2:1-26:12
 INJECTED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml:2:1-26:12
 INJECTED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml:2:1-26:12
-MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/a3df4aa2ab90dddb6f2f8315061bc82f/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/02717991326201e31376c9ef7516ecba/AndroidManifest.xml:2:1-11:12
-MERGED from [com.android.support:recyclerview-v7:27.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/8c2000588168447256395a4d7bb3d6bc/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.persistence.room:rxjava2:1.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/rxjava2-1.1.1.aar/e74376ab004f2aaffcf3d8770f6cd554/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.persistence.room:guava:1.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/guava-1.1.1.aar/71e6fee3cab198466ce6881dc65720cf/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.persistence.room:runtime:1.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/0b57a83e728493cfade0d2e9e81f9b7f/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-fragment:27.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/2d07feb8bb22ea9d7c6ff452ddbb3efa/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/220fd16eb613b8b188cd0a065083c23d/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/8a0fa14d76c57f7808e15a0f9b54f299/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-ui:27.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/1d684bb6294af77f3be5781b45e15d48/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-utils:27.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/0da5b8902ecac23b138536108229b6fe/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-compat:27.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/6576f07e07f0002190aeb576d32de8ea/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.persistence:db-framework:1.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/db-framework-1.1.1.aar/80266eb0194337b3ac74ef0cabc514e9/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.persistence:db:1.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/db-1.1.1.aar/c2a73cca2ce531de2ce6308858fc8733/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/55afb409e14198533872c1c6ea71889a/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.core:runtime:1.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/0336eb25f0b1a5b3b8bc55bd65e943e8/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/a5a063fa195fabed36af16b37438dc91/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/6d964b0203e856719f2254cde65d38b6/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/0a498f0531a5e4fa0371c2ff4ba7a1d1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/3deeb819a9859f772f7e04cb23ede837/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/bae3061718d49c156dca7b5015f69ef0/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.persistence.room:rxjava2:1.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/rxjava2-1.1.1.aar/cf22ad1c58560c67ac5b49f725921685/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.persistence.room:guava:1.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/guava-1.1.1.aar/4523b5cc4e353630f2d9b9bb6bf809fb/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.persistence.room:runtime:1.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/8d043a618affc89d4e7b529050e5044c/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/4fde8a5bf14b06c76ea24517d57273dc/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/0d681c4a37189b36acdf0067538c4fee/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/864a1efe97798bdb37c0989f6309ccf0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/fd4b54ec1a41a153c2524fc5ebb8f242/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/2fc3fdb15da9b9306e3b9c285676cf7f/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/7b97e6e2a3770145e7b67a3fcd2fc1c2/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.persistence:db-framework:1.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/db-framework-1.1.1.aar/d6a23b010d0f015be2cd298072bd2306/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.persistence:db:1.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/db-1.1.1.aar/d31589d2cc842012830788038c92ebfc/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/ae3ff5068a62651b932d75670c0257ed/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/3567e03d315897c33b5f1ba5a54d706e/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/9366bfc8dedb156aa0a514ad60e26666/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/a84fb3a6708a68eb457db5b66dddf822/AndroidManifest.xml:17:1-22:12
 INJECTED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml:2:1-26:12
 INJECTED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml:2:1-26:12
 INJECTED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml:2:1-26:12
@@ -45,8 +45,8 @@ ADDED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifes
 		ADDED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml:5:22-64
 application
 ADDED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml:7:5-24:19
-MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/02717991326201e31376c9ef7516ecba/AndroidManifest.xml:9:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/02717991326201e31376c9ef7516ecba/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/3deeb819a9859f772f7e04cb23ede837/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/3deeb819a9859f772f7e04cb23ede837/AndroidManifest.xml:9:5-20
 	android:supportsRtl
 		ADDED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml:12:9-35
 	android:label
@@ -85,42 +85,42 @@ uses-sdk
 INJECTED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml
 INJECTED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml
-MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/a3df4aa2ab90dddb6f2f8315061bc82f/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/a3df4aa2ab90dddb6f2f8315061bc82f/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/02717991326201e31376c9ef7516ecba/AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/02717991326201e31376c9ef7516ecba/AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support:recyclerview-v7:27.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/8c2000588168447256395a4d7bb3d6bc/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:recyclerview-v7:27.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/8c2000588168447256395a4d7bb3d6bc/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.persistence.room:rxjava2:1.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/rxjava2-1.1.1.aar/e74376ab004f2aaffcf3d8770f6cd554/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.persistence.room:rxjava2:1.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/rxjava2-1.1.1.aar/e74376ab004f2aaffcf3d8770f6cd554/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.persistence.room:guava:1.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/guava-1.1.1.aar/71e6fee3cab198466ce6881dc65720cf/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.persistence.room:guava:1.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/guava-1.1.1.aar/71e6fee3cab198466ce6881dc65720cf/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.persistence.room:runtime:1.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/0b57a83e728493cfade0d2e9e81f9b7f/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.persistence.room:runtime:1.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/0b57a83e728493cfade0d2e9e81f9b7f/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:27.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/2d07feb8bb22ea9d7c6ff452ddbb3efa/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:27.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/2d07feb8bb22ea9d7c6ff452ddbb3efa/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/220fd16eb613b8b188cd0a065083c23d/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/220fd16eb613b8b188cd0a065083c23d/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/8a0fa14d76c57f7808e15a0f9b54f299/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/8a0fa14d76c57f7808e15a0f9b54f299/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/1d684bb6294af77f3be5781b45e15d48/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/1d684bb6294af77f3be5781b45e15d48/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/0da5b8902ecac23b138536108229b6fe/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/0da5b8902ecac23b138536108229b6fe/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/6576f07e07f0002190aeb576d32de8ea/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/6576f07e07f0002190aeb576d32de8ea/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.persistence:db-framework:1.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/db-framework-1.1.1.aar/80266eb0194337b3ac74ef0cabc514e9/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.persistence:db-framework:1.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/db-framework-1.1.1.aar/80266eb0194337b3ac74ef0cabc514e9/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.persistence:db:1.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/db-1.1.1.aar/c2a73cca2ce531de2ce6308858fc8733/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.persistence:db:1.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/db-1.1.1.aar/c2a73cca2ce531de2ce6308858fc8733/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/55afb409e14198533872c1c6ea71889a/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/55afb409e14198533872c1c6ea71889a/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/0336eb25f0b1a5b3b8bc55bd65e943e8/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/0336eb25f0b1a5b3b8bc55bd65e943e8/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/a5a063fa195fabed36af16b37438dc91/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/a5a063fa195fabed36af16b37438dc91/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/6d964b0203e856719f2254cde65d38b6/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/6d964b0203e856719f2254cde65d38b6/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/0a498f0531a5e4fa0371c2ff4ba7a1d1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/0a498f0531a5e4fa0371c2ff4ba7a1d1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/3deeb819a9859f772f7e04cb23ede837/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/3deeb819a9859f772f7e04cb23ede837/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/bae3061718d49c156dca7b5015f69ef0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/bae3061718d49c156dca7b5015f69ef0/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.persistence.room:rxjava2:1.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/rxjava2-1.1.1.aar/cf22ad1c58560c67ac5b49f725921685/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.persistence.room:rxjava2:1.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/rxjava2-1.1.1.aar/cf22ad1c58560c67ac5b49f725921685/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.persistence.room:guava:1.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/guava-1.1.1.aar/4523b5cc4e353630f2d9b9bb6bf809fb/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.persistence.room:guava:1.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/guava-1.1.1.aar/4523b5cc4e353630f2d9b9bb6bf809fb/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.persistence.room:runtime:1.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/8d043a618affc89d4e7b529050e5044c/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.persistence.room:runtime:1.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/8d043a618affc89d4e7b529050e5044c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/4fde8a5bf14b06c76ea24517d57273dc/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/4fde8a5bf14b06c76ea24517d57273dc/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/0d681c4a37189b36acdf0067538c4fee/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/0d681c4a37189b36acdf0067538c4fee/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/864a1efe97798bdb37c0989f6309ccf0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/864a1efe97798bdb37c0989f6309ccf0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/fd4b54ec1a41a153c2524fc5ebb8f242/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/fd4b54ec1a41a153c2524fc5ebb8f242/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/2fc3fdb15da9b9306e3b9c285676cf7f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/2fc3fdb15da9b9306e3b9c285676cf7f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/7b97e6e2a3770145e7b67a3fcd2fc1c2/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/7b97e6e2a3770145e7b67a3fcd2fc1c2/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.persistence:db-framework:1.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/db-framework-1.1.1.aar/d6a23b010d0f015be2cd298072bd2306/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.persistence:db-framework:1.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/db-framework-1.1.1.aar/d6a23b010d0f015be2cd298072bd2306/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.persistence:db:1.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/db-1.1.1.aar/d31589d2cc842012830788038c92ebfc/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.persistence:db:1.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/db-1.1.1.aar/d31589d2cc842012830788038c92ebfc/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/ae3ff5068a62651b932d75670c0257ed/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/ae3ff5068a62651b932d75670c0257ed/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/3567e03d315897c33b5f1ba5a54d706e/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/3567e03d315897c33b5f1ba5a54d706e/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/9366bfc8dedb156aa0a514ad60e26666/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/9366bfc8dedb156aa0a514ad60e26666/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/a84fb3a6708a68eb457db5b66dddf822/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/a84fb3a6708a68eb457db5b66dddf822/AndroidManifest.xml:20:5-44
 INJECTED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml
 INJECTED from /Users/astervaldemoro/PopularMoviesStage2/app/src/main/AndroidManifest.xml
 	android:targetSdkVersion

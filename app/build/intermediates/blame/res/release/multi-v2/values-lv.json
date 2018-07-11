@@ -4,17 +4,7 @@
             "outputFile": "/Users/astervaldemoro/PopularMoviesStage2/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-lv/values-lv.xml",
             "map": [
                 {
-                    "source": "/Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/a3df4aa2ab90dddb6f2f8315061bc82f/res/values-lv/values-lv.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,225,333,442,528,632,754,836,918,1003,1112,1224,1323,1434,1543,1648,1822,1921",
-                        "endColumns": "119,107,108,85,103,121,81,81,84,108,111,98,110,108,104,173,98,81",
-                        "endOffsets": "220,328,437,523,627,749,831,913,998,1107,1219,1318,1429,1538,1643,1817,1916,1998"
-                    }
-                },
-                {
-                    "source": "/Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/6576f07e07f0002190aeb576d32de8ea/res/values-lv/values-lv.xml",
+                    "source": "/Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/7b97e6e2a3770145e7b67a3fcd2fc1c2/res/values-lv/values-lv.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -28,6 +18,16 @@
                         "startOffsets": "2003",
                         "endColumns": "100",
                         "endOffsets": "2099"
+                    }
+                },
+                {
+                    "source": "/Users/astervaldemoro/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/0a498f0531a5e4fa0371c2ff4ba7a1d1/res/values-lv/values-lv.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,225,333,442,528,632,754,836,918,1003,1112,1224,1323,1434,1543,1648,1822,1921",
+                        "endColumns": "119,107,108,85,103,121,81,81,84,108,111,98,110,108,104,173,98,81",
+                        "endOffsets": "220,328,437,523,627,749,831,913,998,1107,1219,1318,1429,1538,1643,1817,1916,1998"
                     }
                 }
             ]

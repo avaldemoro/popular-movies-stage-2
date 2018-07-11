@@ -11,7 +11,7 @@ import android.util.Log;
 
 import co.asterv.popularmoviesstage1.model.Movie;
 
-@Database(entities = {Movie.class}, version = 6, exportSchema = false)
+@Database(entities = {Movie.class}, version = 7, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
     private static final String LOG_TAG = AppDatabase.class.getSimpleName ();
     private static final Object LOCK = new Object();
@@ -25,7 +25,7 @@ public abstract class AppDatabase extends RoomDatabase {
                 sInstance = Room.databaseBuilder (context.getApplicationContext (),
                         AppDatabase.class, AppDatabase.DATABASE_NAME)
                         .allowMainThreadQueries()
-                        .addMigrations (MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5, MIGRATION_5_6)
+                        .addMigrations (MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5, MIGRATION_5_6, MIGRATION_6_7)
                         .build ();
             }
         }
@@ -77,6 +77,34 @@ public abstract class AppDatabase extends RoomDatabase {
                             "releaseDate, voterAverage, trailerPath, reviewAuthor, reviewContents," +
                             "reviewUrl) SELECT * FROM movie"
             );
+
+            database.execSQL (
+                    "DROP TABLE movie"
+            );
+            database.execSQL (
+                    "ALTER TABLE movie_new RENAME TO movie"
+            );
+        }
+    };
+    static final Migration MIGRATION_6_7 = new Migration(6, 7) {
+        @Override
+        public void migrate(SupportSQLiteDatabase database) {
+            database.execSQL (
+                    "CREATE TABLE movie_new (movieId INTEGER NOT NULL, originalTitle TEXT, posterPath TEXT, " +
+                            "overview TEXT, releaseDate TEXT, " +
+                            "voterAverage REAL, trailerPath TEXT, " +
+                            "reviewAuthor TEXT, " +
+                            "reviewContents TEXT, " +
+                            "reviewUrl TEXT, dbMovieId  INTEGER NOT NULL,  PRIMARY KEY (dbMovieId ) )"
+            );
+            database.execSQL (
+                    "INSERT INTO movie_new (movieId, originalTitle, posterPath, overview," +
+                            "releaseDate, voterAverage, trailerPath, reviewAuthor, reviewContents," +
+                            "reviewUrl) SELECT * FROM movie"
+
+            );
+
+
 
             database.execSQL (
                     "DROP TABLE movie"

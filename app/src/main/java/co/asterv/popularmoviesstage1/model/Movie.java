@@ -1,5 +1,6 @@
 package co.asterv.popularmoviesstage1.model;
 
+import android.annotation.SuppressLint;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.Index;
@@ -27,6 +28,8 @@ public class Movie implements Parcelable{
     private String reviewAuthor;
     private String reviewContents;
     private String reviewUrl;
+    @Ignore
+    private boolean isFavoriteMovie;
 
     public Movie() { }
 
@@ -50,6 +53,7 @@ public class Movie implements Parcelable{
     public void setReviewAuthor(String reviewAuthor) { this.reviewAuthor = reviewAuthor; }
     public void setReviewContents(String reviewContents) { this.reviewContents = reviewContents; }
     public void setReviewUrl(String reviewUrl) { this.reviewUrl = reviewUrl; }
+    public void setIsFavoriteMovie(boolean isFavoriteMovie) { this.isFavoriteMovie = isFavoriteMovie; }
 
     // GETTER METHODS
     public int getDbMovieId() { return movieId; }
@@ -73,6 +77,7 @@ public class Movie implements Parcelable{
     public String getReviewAuthor() { return reviewAuthor; }
     public String getReviewContents() { return reviewContents; }
     public String getReviewUrl() { return reviewUrl; }
+    public boolean getIsFavoriteMovie() { return isFavoriteMovie; }
 
     @Override
     public int describeContents() {

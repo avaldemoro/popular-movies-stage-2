@@ -5,19 +5,26 @@ import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 
+import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.preference.PreferenceManager;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import com.squareup.picasso.Picasso;
 
@@ -46,10 +53,13 @@ public class MovieDetails extends AppCompatActivity {
     Button favoriteBtn;
     private AppDatabase mDb;
 
+
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate (savedInstanceState);
         setContentView (R.layout.activity_movie_details);
+
 
         android.support.v7.app.ActionBar actionBar = this.getSupportActionBar ();
         if(actionBar != null) {
@@ -67,10 +77,36 @@ public class MovieDetails extends AppCompatActivity {
 
         mDb = AppDatabase.getInstance (getApplicationContext ());
 
+        // All movies saved to phone are "Favorite movies"
+        Movie[] favoriteMovies = mDb.movieDao ().loadAllMovies ();
+
+        // So, if the current movieId matches any one of the movies in favoriteMovies
+        // set isFavoriteMovie to true
+        for(int i = 0; i < favoriteMovies.length; i++) {
+            if (movie.getMovieId () == favoriteMovies[i].getMovieId ()) {
+                movie.setIsFavoriteMovie (true);
+            }
+        }
+
+        Log.e("IS FAVORITE MOVIE?!?!", String.valueOf (movie.getIsFavoriteMovie ()));
+        if(movie.getIsFavoriteMovie ()) {
+            favoriteBtn.setText(Constants.FAVORITED_STRING);
+            favoriteBtn.setTextColor (Color.parseColor("#fc4235"));
+        } else {
+            favoriteBtn.setText(Constants.ADD_TO_FAVORITES_STRING);
+        }
+
+        //TOGGLE BUTTON
+        favoriteBtn.setOnClickListener(v -> onFavoriteButtonClicked ());
     }
+
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState (outState);
+    }
+
+    protected void onRestoreInstanceState(Bundle savedState) {
+        super.onRestoreInstanceState (savedState);
     }
 
     public boolean onOptionsSelectedItem(MenuItem item) {
@@ -129,11 +165,9 @@ public class MovieDetails extends AppCompatActivity {
         // LOAD REVIEWS
         new ReviewsAsyncTask ().execute(String.valueOf(movie.getMovieId ()), Constants.REVIEW_URL_QUERY_PARAM);
 
-        // BUTTON
-        favoriteBtn.setOnClickListener((View v) -> {
-            favoriteBtn.setText("Favorited!");
-            onFavoriteButtonClicked ();
-        });
+
+
+
     }
 
     /*** ASYNC TASK FOR THE "WATCH TRAILER" BUTTON ***/
@@ -252,12 +286,12 @@ public class MovieDetails extends AppCompatActivity {
     /*** FAVORITE MOVIE BUTTON IS CALLED WHEN "ADD TO FAVORITES" BUTTON IS CLICKED***/
     public void onFavoriteButtonClicked() {
         final Movie movie = getIntent().getExtras().getParcelable ( "movie");
-
-        AppExecutor.getInstance ().diskIO ().execute (() -> runOnUiThread(() -> {
-            mDb.movieDao ().insertMovie (movie);
-
-            finish();
-            favoriteBtn.setText("Favorited!");
-        }));
+        assert movie != null;
+        AppExecutor.getInstance ().diskIO ().execute (() -> {
+            runOnUiThread (() -> {
+                mDb.movieDao ().insertMovie (movie);
+                //finish ();
+            });
+        });
     }
 }
