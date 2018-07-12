@@ -61,10 +61,6 @@ public class MainActivity extends AppCompatActivity{
         mRecyclerView.setLayoutManager(mLayoutManager);
         mDb = AppDatabase.getInstance (getApplicationContext ());
 
-        android.support.v7.app.ActionBar actionBar = this.getSupportActionBar ();
-        if(actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled (true);
-        }
         if(savedInstanceState != null) {
             selectedItem = savedInstanceState.getInt("OPTION");
         }

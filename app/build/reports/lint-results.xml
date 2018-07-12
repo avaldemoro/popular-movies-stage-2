@@ -13,73 +13,9 @@
         errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
         quickfix="studio">
         <location
-            file="/Users/astervaldemoro/PopularMoviesStage2/app/src/main/res/layout/activity_movie_details.xml"
+            file="/Users/astervaldemoro/PopularMoviesStage2/app/src/main/res/layout-land/activity_movie_details.xml"
             line="11"
             column="9"/>
-    </issue>
-
-    <issue
-        id="InconsistentLayout"
-        severity="Warning"
-        message="The id &quot;textView&quot; in layout &quot;activity_movie_details&quot; is missing from the following layout configurations: layout-land (present in layout)"
-        category="Correctness"
-        priority="6"
-        summary="Inconsistent Layouts"
-        explanation="This check ensures that a layout resource which is defined in multiple resource folders, specifies the same set of widgets.&#xA;&#xA;This finds cases where you have accidentally forgotten to add a widget to all variations of the layout, which could result in a runtime crash for some resource configurations when a `findViewById()` fails.&#xA;&#xA;There **are** cases where this is intentional. For example, you may have a dedicated large tablet layout which adds some extra widgets that are not present in the phone version of the layout. As long as the code accessing the layout resource is careful to handle this properly, it is valid. In that case, you can suppress this lint check for the given extra or missing views, or the whole layout"
-        errorLine1="            android:id=&quot;@+id/textView&quot;"
-        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="/Users/astervaldemoro/PopularMoviesStage2/app/src/main/res/layout/activity_movie_details.xml"
-            line="126"
-            column="13"/>
-    </issue>
-
-    <issue
-        id="InconsistentLayout"
-        severity="Warning"
-        message="The id &quot;reviewsRecyclerView&quot; in layout &quot;activity_movie_details&quot; is missing from the following layout configurations: layout-land (present in layout)"
-        category="Correctness"
-        priority="6"
-        summary="Inconsistent Layouts"
-        explanation="This check ensures that a layout resource which is defined in multiple resource folders, specifies the same set of widgets.&#xA;&#xA;This finds cases where you have accidentally forgotten to add a widget to all variations of the layout, which could result in a runtime crash for some resource configurations when a `findViewById()` fails.&#xA;&#xA;There **are** cases where this is intentional. For example, you may have a dedicated large tablet layout which adds some extra widgets that are not present in the phone version of the layout. As long as the code accessing the layout resource is careful to handle this properly, it is valid. In that case, you can suppress this lint check for the given extra or missing views, or the whole layout"
-        errorLine1="            android:id=&quot;@+id/reviewsRecyclerView&quot;"
-        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="/Users/astervaldemoro/PopularMoviesStage2/app/src/main/res/layout/activity_movie_details.xml"
-            line="145"
-            column="13"/>
-    </issue>
-
-    <issue
-        id="InconsistentLayout"
-        severity="Warning"
-        message="The id &quot;divider2&quot; in layout &quot;activity_movie_details&quot; is missing from the following layout configurations: layout-land (present in layout)"
-        category="Correctness"
-        priority="6"
-        summary="Inconsistent Layouts"
-        explanation="This check ensures that a layout resource which is defined in multiple resource folders, specifies the same set of widgets.&#xA;&#xA;This finds cases where you have accidentally forgotten to add a widget to all variations of the layout, which could result in a runtime crash for some resource configurations when a `findViewById()` fails.&#xA;&#xA;There **are** cases where this is intentional. For example, you may have a dedicated large tablet layout which adds some extra widgets that are not present in the phone version of the layout. As long as the code accessing the layout resource is careful to handle this properly, it is valid. In that case, you can suppress this lint check for the given extra or missing views, or the whole layout"
-        errorLine1="            android:id=&quot;@+id/divider2&quot;"
-        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="/Users/astervaldemoro/PopularMoviesStage2/app/src/main/res/layout/activity_movie_details.xml"
-            line="155"
-            column="13"/>
-    </issue>
-
-    <issue
-        id="InconsistentLayout"
-        severity="Warning"
-        message="The id &quot;favoritesBtn&quot; in layout &quot;activity_movie_details&quot; is missing from the following layout configurations: layout-land (present in layout)"
-        category="Correctness"
-        priority="6"
-        summary="Inconsistent Layouts"
-        explanation="This check ensures that a layout resource which is defined in multiple resource folders, specifies the same set of widgets.&#xA;&#xA;This finds cases where you have accidentally forgotten to add a widget to all variations of the layout, which could result in a runtime crash for some resource configurations when a `findViewById()` fails.&#xA;&#xA;There **are** cases where this is intentional. For example, you may have a dedicated large tablet layout which adds some extra widgets that are not present in the phone version of the layout. As long as the code accessing the layout resource is careful to handle this properly, it is valid. In that case, you can suppress this lint check for the given extra or missing views, or the whole layout"
-        errorLine1="                android:id=&quot;@+id/favoritesBtn&quot;"
-        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="/Users/astervaldemoro/PopularMoviesStage2/app/src/main/res/layout/activity_movie_details.xml"
-            line="198"
-            column="17"/>
     </issue>
 
     <issue
@@ -113,7 +49,7 @@
         errorLine2="                 ~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/astervaldemoro/PopularMoviesStage2/app/src/main/java/co/asterv/popularmoviesstage1/MainActivity.java"
-            line="153"
+            line="181"
             column="18"/>
     </issue>
 
@@ -129,7 +65,7 @@
         errorLine2="                  ~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/astervaldemoro/PopularMoviesStage2/app/src/main/java/co/asterv/popularmoviesstage1/MovieDetails.java"
-            line="167"
+            line="188"
             column="19"/>
     </issue>
 
@@ -145,7 +81,7 @@
         errorLine2="                  ~~~~~~~~~~~~~~~~">
         <location
             file="/Users/astervaldemoro/PopularMoviesStage2/app/src/main/java/co/asterv/popularmoviesstage1/MovieDetails.java"
-            line="230"
+            line="251"
             column="19"/>
     </issue>
 
@@ -198,23 +134,6 @@
         quickfix="studio">
         <location
             file="/Users/astervaldemoro/PopularMoviesStage2/app/src/main/res/layout-land/activity_movie_details.xml"
-            line="14"
-            column="9"/>
-    </issue>
-
-    <issue
-        id="ContentDescription"
-        severity="Warning"
-        message="Missing `contentDescription` attribute on image"
-        category="Accessibility"
-        priority="3"
-        summary="Image without `contentDescription`"
-        explanation="Non-textual widgets like ImageViews and ImageButtons should use the `contentDescription` attribute to specify a textual description of the widget such that screen readers and other accessibility tools can adequately describe the user interface.&#xA;&#xA;Note that elements in application screens that are purely decorative and do not provide any content or enable a user action should not have accessibility content descriptions. In this case, just suppress the lint warning with a tools:ignore=&quot;ContentDescription&quot; attribute.&#xA;&#xA;Note that for text fields, you should not set both the `hint` and the `contentDescription` attributes since the hint will never be shown. Just set the `hint`. See http://developer.android.com/guide/topics/ui/accessibility/checklist.html#special-cases."
-        errorLine1="        &lt;ImageView"
-        errorLine2="        ^"
-        quickfix="studio">
-        <location
-            file="/Users/astervaldemoro/PopularMoviesStage2/app/src/main/res/layout/activity_movie_details.xml"
             line="15"
             column="9"/>
     </issue>
@@ -250,7 +169,7 @@
         errorLine2="                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/astervaldemoro/PopularMoviesStage2/app/src/main/java/co/asterv/popularmoviesstage1/MovieDetails.java"
-            line="136"
+            line="150"
             column="27"/>
     </issue>
 
@@ -266,22 +185,6 @@
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/astervaldemoro/PopularMoviesStage2/app/src/main/res/layout-land/activity_movie_details.xml"
-            line="32"
-            column="13"/>
-    </issue>
-
-    <issue
-        id="HardcodedText"
-        severity="Warning"
-        message="Hardcoded string &quot;Title Placeholder&quot;, should use `@string` resource"
-        category="Internationalization"
-        priority="5"
-        summary="Hardcoded text"
-        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
-        errorLine1="            android:text=&quot;Title Placeholder&quot;"
-        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="/Users/astervaldemoro/PopularMoviesStage2/app/src/main/res/layout/activity_movie_details.xml"
             line="36"
             column="13"/>
     </issue>
@@ -298,22 +201,6 @@
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/astervaldemoro/PopularMoviesStage2/app/src/main/res/layout-land/activity_movie_details.xml"
-            line="48"
-            column="13"/>
-    </issue>
-
-    <issue
-        id="HardcodedText"
-        severity="Warning"
-        message="Hardcoded string &quot;x.x / 10&quot;, should use `@string` resource"
-        category="Internationalization"
-        priority="5"
-        summary="Hardcoded text"
-        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
-        errorLine1="            android:text=&quot;x.x / 10&quot;"
-        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="/Users/astervaldemoro/PopularMoviesStage2/app/src/main/res/layout/activity_movie_details.xml"
             line="53"
             column="13"/>
     </issue>
@@ -330,22 +217,6 @@
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/astervaldemoro/PopularMoviesStage2/app/src/main/res/layout-land/activity_movie_details.xml"
-            line="63"
-            column="13"/>
-    </issue>
-
-    <issue
-        id="HardcodedText"
-        severity="Warning"
-        message="Hardcoded string &quot;XX/XX/XXXX&quot;, should use `@string` resource"
-        category="Internationalization"
-        priority="5"
-        summary="Hardcoded text"
-        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
-        errorLine1="            android:text=&quot;XX/XX/XXXX&quot;"
-        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="/Users/astervaldemoro/PopularMoviesStage2/app/src/main/res/layout/activity_movie_details.xml"
             line="69"
             column="13"/>
     </issue>
@@ -362,22 +233,6 @@
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/astervaldemoro/PopularMoviesStage2/app/src/main/res/layout-land/activity_movie_details.xml"
-            line="79"
-            column="13"/>
-    </issue>
-
-    <issue
-        id="HardcodedText"
-        severity="Warning"
-        message="Hardcoded string &quot;Rating: &quot;, should use `@string` resource"
-        category="Internationalization"
-        priority="5"
-        summary="Hardcoded text"
-        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
-        errorLine1="            android:text=&quot;Rating: &quot;"
-        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="/Users/astervaldemoro/PopularMoviesStage2/app/src/main/res/layout/activity_movie_details.xml"
             line="84"
             column="13"/>
     </issue>
@@ -394,22 +249,6 @@
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/astervaldemoro/PopularMoviesStage2/app/src/main/res/layout-land/activity_movie_details.xml"
-            line="91"
-            column="13"/>
-    </issue>
-
-    <issue
-        id="HardcodedText"
-        severity="Warning"
-        message="Hardcoded string &quot;Released: &quot;, should use `@string` resource"
-        category="Internationalization"
-        priority="5"
-        summary="Hardcoded text"
-        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
-        errorLine1="            android:text=&quot;Released: &quot;"
-        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="/Users/astervaldemoro/PopularMoviesStage2/app/src/main/res/layout/activity_movie_details.xml"
             line="100"
             column="13"/>
     </issue>
@@ -426,39 +265,7 @@
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/astervaldemoro/PopularMoviesStage2/app/src/main/res/layout-land/activity_movie_details.xml"
-            line="106"
-            column="13"/>
-    </issue>
-
-    <issue
-        id="HardcodedText"
-        severity="Warning"
-        message="Hardcoded string &quot;Overview&quot;, should use `@string` resource"
-        category="Internationalization"
-        priority="5"
-        summary="Hardcoded text"
-        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
-        errorLine1="            android:text=&quot;Overview&quot;"
-        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="/Users/astervaldemoro/PopularMoviesStage2/app/src/main/res/layout/activity_movie_details.xml"
             line="116"
-            column="13"/>
-    </issue>
-
-    <issue
-        id="HardcodedText"
-        severity="Warning"
-        message="Hardcoded string &quot;WATCH TRAILER&quot;, should use `@string` resource"
-        category="Internationalization"
-        priority="5"
-        summary="Hardcoded text"
-        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
-        errorLine1="            android:text=&quot;WATCH TRAILER&quot;"
-        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="/Users/astervaldemoro/PopularMoviesStage2/app/src/main/res/layout-land/activity_movie_details.xml"
-            line="123"
             column="13"/>
     </issue>
 
@@ -473,7 +280,7 @@
         errorLine1="            android:text=&quot;Reviews&quot;"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="/Users/astervaldemoro/PopularMoviesStage2/app/src/main/res/layout/activity_movie_details.xml"
+            file="/Users/astervaldemoro/PopularMoviesStage2/app/src/main/res/layout-land/activity_movie_details.xml"
             line="133"
             column="13"/>
     </issue>
@@ -489,7 +296,7 @@
         errorLine1="                android:text=&quot;WATCH TRAILER&quot;"
         errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="/Users/astervaldemoro/PopularMoviesStage2/app/src/main/res/layout/activity_movie_details.xml"
+            file="/Users/astervaldemoro/PopularMoviesStage2/app/src/main/res/layout-land/activity_movie_details.xml"
             line="187"
             column="17"/>
     </issue>
@@ -505,7 +312,7 @@
         errorLine1="                android:text=&quot;Add To Favorites&quot;"
         errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="/Users/astervaldemoro/PopularMoviesStage2/app/src/main/res/layout/activity_movie_details.xml"
+            file="/Users/astervaldemoro/PopularMoviesStage2/app/src/main/res/layout-land/activity_movie_details.xml"
             line="206"
             column="17"/>
     </issue>
