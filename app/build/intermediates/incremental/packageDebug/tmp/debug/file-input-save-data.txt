@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Tue Jul 10 23:57:48 EDT 2018
+#Wed Jul 11 20:42:09 EDT 2018
 2.base=/Users/astervaldemoro/PopularMoviesStage2/app/build/intermediates/transforms/dexMerger/debug/16
 5.set=DEX
 0.path=classes.dex

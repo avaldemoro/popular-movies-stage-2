@@ -48,7 +48,6 @@ import co.asterv.popularmoviesstage1.utils.JsonUtils;
 public class MovieDetails extends AppCompatActivity {
     RecyclerView mRecyclerView;
     ReviewAdapter mReviewAdapter;
-    ImageAdapter mImageAdapter;
     TextView reviewLabel;
     View divider;
     Movie movie;
@@ -87,28 +86,20 @@ public class MovieDetails extends AppCompatActivity {
         setupDetailsUI (movie);
 
         // TOGGLE TOGGLE TOGGLE
-        favoriteBtn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    // The toggle is enabled
+        favoriteBtn.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked) {
+                // The toggle is enabled
 
-                } else {
-                    // The toggle is disabled
-                    favoriteBtn.setTextColor (Color.parseColor("#000000"));
-                    favoriteBtn.getTextOff();
+            } else {
+                // The toggle is disabled
+                favoriteBtn.setTextColor (Color.parseColor("#000000"));
+                favoriteBtn.getTextOff();
 
-                    movie.setIsFavoriteMovie (false);
-                    AppExecutor.getInstance().diskIO().execute(new Runnable() {
-                        @Override
-                        public void run() {
-                            mDb.movieDao ().deleteMovie (movie.getMovieId ());
-                        }
-                    });
-                    Log.e("fav movie after delete?", String.valueOf(movie.getOriginalTitle ()) + String.valueOf(movie.getIsFavoriteMovie ()));
-                }
+                movie.setIsFavoriteMovie (false);
+                AppExecutor.getInstance().diskIO().execute(() -> mDb.movieDao().deleteMovie (movie));
+                Log.e("fav movie after delete?", String.valueOf(movie.getOriginalTitle ()) + String.valueOf(movie.getIsFavoriteMovie ()));
             }
         });
-
         //TOGGLE BUTTON
         favoriteBtn.setOnClickListener(v -> onFavoriteButtonClicked ());
     }

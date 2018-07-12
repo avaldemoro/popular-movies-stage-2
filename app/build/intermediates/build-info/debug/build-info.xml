@@ -5,34 +5,42 @@
     build-mode="COLD"
     density="420dpi"
     format="10"
+    ir-eligibility="FIELD_REMOVED"
     plugin-version="3.1.3"
-    timestamp="1531281467492"
+    timestamp="1531366121719"
     token="1284629761066639041"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="1401" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="34" />
     <task
         name="verifier"
-        duration="0" />
+        duration="4" />
 
     <artifact
-        location="/Users/astervaldemoro/PopularMoviesStage2/app/build/intermediates/instant-run-apk/debug/app-debug.apk"
-        type="SPLIT_MAIN" />
+        location="/Users/astervaldemoro/PopularMoviesStage2/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
+        type="SPLIT" />
 
     <build
         build-mode="FULL"
-        timestamp="1531264685765"
-        verifier="FULL_BUILD_REQUESTED" >
+        ir-eligibility="FIELD_ADDED"
+        timestamp="1531356126371"
+        verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/Users/astervaldemoro/PopularMoviesStage2/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/astervaldemoro/PopularMoviesStage2/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/astervaldemoro/PopularMoviesStage2/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
             type="SPLIT" />
         <artifact
             location="/Users/astervaldemoro/PopularMoviesStage2/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
@@ -41,58 +49,44 @@
             location="/Users/astervaldemoro/PopularMoviesStage2/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/astervaldemoro/PopularMoviesStage2/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/astervaldemoro/PopularMoviesStage2/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
-            type="SPLIT" />
-        <artifact
             location="/Users/astervaldemoro/PopularMoviesStage2/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
             type="SPLIT" />
         <artifact
+            location="/Users/astervaldemoro/PopularMoviesStage2/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
+            type="SPLIT" />
+        <artifact
             location="/Users/astervaldemoro/PopularMoviesStage2/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/astervaldemoro/PopularMoviesStage2/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/astervaldemoro/PopularMoviesStage2/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/astervaldemoro/PopularMoviesStage2/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
             type="SPLIT" />
         <artifact
             location="/Users/astervaldemoro/PopularMoviesStage2/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
             type="SPLIT" />
         <artifact
+            location="/Users/astervaldemoro/PopularMoviesStage2/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/astervaldemoro/PopularMoviesStage2/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
+            type="SPLIT" />
+        <artifact
             location="/Users/astervaldemoro/PopularMoviesStage2/app/build/intermediates/instant-run-apk/debug/app-debug.apk"
             type="SPLIT_MAIN" />
     </build>
     <build
         build-mode="COLD"
-        ir-eligibility="FIELD_TYPE_CHANGE"
-        timestamp="1531280581003"
+        ir-eligibility="FIELD_REMOVED"
+        timestamp="1531358279796"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
-            location="/Users/astervaldemoro/PopularMoviesStage2/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
+            location="/Users/astervaldemoro/PopularMoviesStage2/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
             type="SPLIT" />
     </build>
     <build
         build-mode="COLD"
-        ir-eligibility="METHOD_DELETED"
-        timestamp="1531281260300"
+        ir-eligibility="FIELD_REMOVED"
+        timestamp="1531366121719"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/Users/astervaldemoro/PopularMoviesStage2/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
             type="SPLIT" />
-    </build>
-    <build
-        build-mode="COLD"
-        timestamp="1531281467492"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="/Users/astervaldemoro/PopularMoviesStage2/app/build/intermediates/instant-run-apk/debug/app-debug.apk"
-            type="SPLIT_MAIN" />
     </build>
 
 </instant-run>

@@ -42,11 +42,12 @@ public class MainActivity extends AppCompatActivity{
     private RecyclerView mRecyclerView;
     private RecyclerView.LayoutManager mLayoutManager;
     private AppDatabase mDb;
-
+    private int selectedItem;
+    MenuItem menuItem;
     Movie[] movies;
     ImageAdapter mImageAdapter;
 
-    @SuppressLint("WrongConstant")
+    @SuppressLint({"WrongConstant", "ResourceType"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate (savedInstanceState);
@@ -63,9 +64,10 @@ public class MainActivity extends AppCompatActivity{
         android.support.v7.app.ActionBar actionBar = this.getSupportActionBar ();
         if(actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled (true);
-
         }
-
+        if(savedInstanceState != null) {
+            selectedItem = savedInstanceState.getInt("OPTION");
+        }
         // Check if online
         if (isOnline ()) {
             //Default to Popular Query Sort
@@ -75,36 +77,64 @@ public class MainActivity extends AppCompatActivity{
         }
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume ();
-    }
-
+    @SuppressLint("ResourceType")
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState (outState);
+
+        outState.putInt("OPTION", selectedItem);
     }
 
-    /*** MENU METHOD ***/
+    @Override
+    protected void onRestoreInstanceState(Bundle outState) {
+        selectedItem = outState.getInt ("OPTION");
+    }
+    /*** MENU METHODS ***/
+
+    //Attempt to try and save selected menu item on screen rotation
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater ();
         inflater.inflate(R.menu.preference_menu, menu);
+        switch (selectedItem){
+            case R.id.popular_setting:
+                menuItem = menu.findItem(R.id.popular_setting);
+                menuItem.setChecked (true);
+                break;
+
+            case R.id.top_rated_setting:
+                menuItem = menu.findItem(R.id.top_rated_setting);
+                menuItem.setChecked (true);
+                break;
+
+            case R.id.favorite_movie_setting:
+                menuItem = menu.findItem(R.id.popular_setting);
+                menuItem.setChecked (true);
+                break;
+        }
         return true;
     }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId ();
         if (id == R.id.popular_setting) {
-
+            selectedItem = id;
+            item.setVisible (true);
             new FetchDataAsyncTask ().execute(Constants.POPULAR_QUERY_PARAM);
-        } else if (id == R.id.top_rated_setting) {
+            return true;
+        }
+        if (id == R.id.top_rated_setting) {
+            selectedItem = id;
+            item.setVisible (true);
             new FetchDataAsyncTask().execute(Constants.TOP_RATED_QUERY_PARAM);
-        } else {
-
-            retrieveMovies ();
+            return true;
+        }
+        if (id == R.id.favorite_movie_setting){
+            selectedItem = id;
+            item.setVisible (true);
+            retrieveMovies (); // Favorite Movies
+            return true;
         }
 
         return super.onOptionsItemSelected (item);
@@ -118,10 +148,6 @@ public class MainActivity extends AppCompatActivity{
             public void run() {
                 mImageAdapter.notifyDataSetChanged ();
                 mImageAdapter.setMovies (movies);
-
-                for (int i = 0; i < movies.length; i++) {
-                    Log.e("MOVIES " , String.valueOf (movies[i].getOriginalTitle ()) + " " +String.valueOf (movies[i].getIsFavoriteMovie ()) +"\n");
-                }
             }
         }));
     }
@@ -164,7 +190,7 @@ public class MainActivity extends AppCompatActivity{
         @Override
         protected Movie[] doInBackground(String... params) {
             // Holds data returned from the API
-            String movieSearchResults = null;
+            String movieSearchResults;
 
             try {
                 URL url = JsonUtils.buildUrl(params);
@@ -184,7 +210,6 @@ public class MainActivity extends AppCompatActivity{
 
         protected void onPostExecute(Movie[] movies) {
             mImageAdapter = new ImageAdapter(getApplicationContext(), movies);
-
             mRecyclerView.setAdapter(mImageAdapter);
         }
     }

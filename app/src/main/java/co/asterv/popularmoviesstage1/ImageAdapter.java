@@ -31,7 +31,6 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> 
         } else {
             this.mContext = mContext;
         }
-
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -88,4 +87,5 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> 
     public void setMovies(Movie[] movies) {
         mMovies = movies;
     }
+
 }

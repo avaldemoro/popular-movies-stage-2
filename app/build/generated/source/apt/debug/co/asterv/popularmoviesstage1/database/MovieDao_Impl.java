@@ -5,7 +5,6 @@ import android.arch.persistence.room.EntityDeletionOrUpdateAdapter;
 import android.arch.persistence.room.EntityInsertionAdapter;
 import android.arch.persistence.room.RoomDatabase;
 import android.arch.persistence.room.RoomSQLiteQuery;
-import android.arch.persistence.room.SharedSQLiteStatement;
 import android.database.Cursor;
 import co.asterv.popularmoviesstage1.model.Movie;
 import java.lang.Double;
@@ -19,9 +18,9 @@ public class MovieDao_Impl implements MovieDao {
 
   private final EntityInsertionAdapter __insertionAdapterOfMovie;
 
-  private final EntityDeletionOrUpdateAdapter __updateAdapterOfMovie;
+  private final EntityDeletionOrUpdateAdapter __deletionAdapterOfMovie;
 
-  private final SharedSQLiteStatement __preparedStmtOfDeleteMovie;
+  private final EntityDeletionOrUpdateAdapter __updateAdapterOfMovie;
 
   public MovieDao_Impl(RoomDatabase __db) {
     this.__db = __db;
@@ -82,6 +81,17 @@ public class MovieDao_Impl implements MovieDao {
         }
       }
     };
+    this.__deletionAdapterOfMovie = new EntityDeletionOrUpdateAdapter<Movie>(__db) {
+      @Override
+      public String createQuery() {
+        return "DELETE FROM `movie` WHERE `dbMovieId` = ?";
+      }
+
+      @Override
+      public void bind(SupportSQLiteStatement stmt, Movie value) {
+        stmt.bindLong(1, value.getDbMovieId());
+      }
+    };
     this.__updateAdapterOfMovie = new EntityDeletionOrUpdateAdapter<Movie>(__db) {
       @Override
       public String createQuery() {
@@ -140,13 +150,6 @@ public class MovieDao_Impl implements MovieDao {
         stmt.bindLong(12, value.getDbMovieId());
       }
     };
-    this.__preparedStmtOfDeleteMovie = new SharedSQLiteStatement(__db) {
-      @Override
-      public String createQuery() {
-        final String _query = "DELETE FROM movie WHERE movieId = ?";
-        return _query;
-      }
-    };
   }
 
   @Override
@@ -161,10 +164,10 @@ public class MovieDao_Impl implements MovieDao {
   }
 
   @Override
-  public void updateMovie(Movie movie) {
+  public void deleteMovie(Movie movie) {
     __db.beginTransaction();
     try {
-      __updateAdapterOfMovie.handle(movie);
+      __deletionAdapterOfMovie.handle(movie);
       __db.setTransactionSuccessful();
     } finally {
       __db.endTransaction();
@@ -172,17 +175,13 @@ public class MovieDao_Impl implements MovieDao {
   }
 
   @Override
-  public void deleteMovie(int movieId) {
-    final SupportSQLiteStatement _stmt = __preparedStmtOfDeleteMovie.acquire();
+  public void updateMovie(Movie movie) {
     __db.beginTransaction();
     try {
-      int _argIndex = 1;
-      _stmt.bindLong(_argIndex, movieId);
-      _stmt.executeUpdateDelete();
+      __updateAdapterOfMovie.handle(movie);
       __db.setTransactionSuccessful();
     } finally {
       __db.endTransaction();
-      __preparedStmtOfDeleteMovie.release(_stmt);
     }
   }
 
