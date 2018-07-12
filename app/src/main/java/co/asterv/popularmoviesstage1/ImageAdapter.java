@@ -1,15 +1,10 @@
 package co.asterv.popularmoviesstage1;
 import co.asterv.popularmoviesstage1.model.Movie;
-import co.asterv.popularmoviesstage1.utils.Constants;
 
-
-import android.content.Context;
-import android.content.Intent;
+import android.content.*;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.widget.*;
 import android.view.ViewGroup;
 import com.squareup.picasso.*;

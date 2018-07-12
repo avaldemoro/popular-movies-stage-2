@@ -1,16 +1,10 @@
 package co.asterv.popularmoviesstage1;
 
 import android.annotation.SuppressLint;
-import android.arch.lifecycle.LiveData;
-import android.content.ActivityNotFoundException;
-import android.content.Context;
-import android.content.Intent;
-
-import android.content.SharedPreferences;
+import android.content.*;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.preference.PreferenceManager;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,28 +12,13 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Button;
-import android.widget.CompoundButton;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
-import android.widget.ToggleButton;
-
+import android.widget.*;
 import com.squareup.picasso.Picasso;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.w3c.dom.Text;
-
+import org.json.*;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
-
-import javax.annotation.Nullable;
-
 import co.asterv.popularmoviesstage1.database.AppDatabase;
 import co.asterv.popularmoviesstage1.model.Movie;
 import co.asterv.popularmoviesstage1.utils.Constants;

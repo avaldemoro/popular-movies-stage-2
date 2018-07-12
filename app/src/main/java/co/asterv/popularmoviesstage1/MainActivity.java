@@ -4,39 +4,16 @@ import co.asterv.popularmoviesstage1.database.AppDatabase;
 import co.asterv.popularmoviesstage1.utils.Constants;
 import co.asterv.popularmoviesstage1.utils.JsonUtils;
 import co.asterv.popularmoviesstage1.model.Movie;
-
 import android.annotation.SuppressLint;
-import android.app.ActionBar;
-import android.app.LoaderManager;
-import android.content.AsyncTaskLoader;
-import android.content.Context;
-import android.content.Intent;
-import android.content.Loader;
 import android.os.AsyncTask;
-import android.os.Parcelable;
-import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.util.AttributeSet;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
+import android.support.v7.widget.*;
+import android.view.*;
 import android.widget.Toast;
-import android.widget.ToggleButton;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
+import org.json.*;
 import java.io.IOException;
 import java.net.URL;
-
-import static android.widget.AdapterView.*;
 
 public class MainActivity extends AppCompatActivity{
     private RecyclerView mRecyclerView;

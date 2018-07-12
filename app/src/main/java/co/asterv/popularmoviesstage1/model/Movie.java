@@ -1,18 +1,10 @@
 package co.asterv.popularmoviesstage1.model;
 
-import android.annotation.SuppressLint;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.Ignore;
-import android.arch.persistence.room.Index;
-import android.arch.persistence.room.Insert;
-import android.arch.persistence.room.OnConflictStrategy;
 import android.arch.persistence.room.PrimaryKey;
-import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.support.annotation.NonNull;
-
-import co.asterv.popularmoviesstage1.utils.Constants;
 
 @Entity(tableName = "movie")
 public class Movie implements Parcelable{
