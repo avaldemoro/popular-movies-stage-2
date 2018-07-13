@@ -14,6 +14,8 @@ public class Constants {
     public final static String OUT_OF_RATING_STRING = " / 10";
     public static String FAVORITED_STRING = "Favorited!";
     public static String ADD_TO_FAVORITES_STRING = "Add to Favorites";
+    public static String FULL_DATE_FORMAT_STRING = "MMMM dd, yyyy";
+    public static String UNFORMATED_DATE_STRING = "yyyy-MM-dd";
 
     /* ERROR MESSAGES */
     public final static String NO_INTERNET_TEXT = "Oh no! No internet connection.";

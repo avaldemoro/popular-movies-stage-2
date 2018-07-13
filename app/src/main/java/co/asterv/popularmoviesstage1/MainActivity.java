@@ -20,9 +20,9 @@ public class MainActivity extends AppCompatActivity{
     private RecyclerView.LayoutManager mLayoutManager;
     private AppDatabase mDb;
     private int selectedItem;
-    MenuItem menuItem;
-    Movie[] movies;
-    ImageAdapter mImageAdapter;
+    private MenuItem menuItem;
+    private Movie[] movies;
+    private ImageAdapter mImageAdapter;
 
     @SuppressLint({"WrongConstant", "ResourceType"})
     @Override

@@ -14,6 +14,6 @@ public interface MovieDao {
     @Update(onConflict = OnConflictStrategy.IGNORE)
     void updateMovie(Movie movie);
 
-    @Delete
-    void deleteMovie(Movie movie);
+    @Query("DELETE FROM movie WHERE dbMovieId = :movieId")
+    void deleteMovie(int movieId);
 }

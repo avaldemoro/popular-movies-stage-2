@@ -14,17 +14,17 @@
 
         <ImageView
             android:id="@+id/posterImageView"
-            android:layout_width="0dp"
-            android:layout_height="500dp"
-            android:layout_marginBottom="8dp"
-            android:alpha="0.7"
+            android:layout_width="match_parent"
+            android:layout_height="600dp"
+            android:layout_margin="0dp"
             android:scaleType="fitXY"
-            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+            android:tint="#6F000000"
+            app:layout_constraintBottom_toTopOf="@+id/overviewTextView"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.55" />
+            app:layout_constraintVertical_bias="0.0" />
 
 
         <TextView
@@ -34,14 +34,16 @@
             android:layout_marginEnd="8dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif-condensed"
             android:text="Title Placeholder"
-            android:textAlignment="textStart"
-            android:textSize="30sp"
-            android:textStyle="bold"
+            android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title"
             android:textColor="@color/colorText"
+            android:textSize="45sp"
+            android:typeface="normal"
             app:layout_constraintEnd_toEndOf="@+id/posterImageView"
             app:layout_constraintStart_toStartOf="@+id/posterImageView"
-            app:layout_constraintTop_toTopOf="@+id/posterImageView" />
+            app:layout_constraintTop_toTopOf="@+id/posterImageView"
+            tools:shadowColor="@android:drawable/dark_header" />
 
         <TextView
             android:id="@+id/ratingTextView"
@@ -53,8 +55,9 @@
             android:layout_marginTop="8dp"
             android:text="x.x / 10"
             android:textAlignment="viewStart"
-            android:textSize="20sp"
             android:textColor="@color/colorText"
+            android:textSize="24sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/releaseDateLabel"
             app:layout_constraintEnd_toEndOf="@+id/posterImageView"
             app:layout_constraintHorizontal_bias="0.015"
@@ -66,12 +69,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            android:layout_marginEnd="124dp"
+            android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
             android:text="XX/XX/XXXX"
-            android:textSize="20sp"
             android:textColor="@color/colorText"
+            android:textSize="24sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/posterImageView"
             app:layout_constraintEnd_toEndOf="@+id/posterImageView"
             app:layout_constraintHorizontal_bias="0.045"
@@ -87,8 +91,8 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="16dp"
             android:text="Rating: "
-            android:textColor="@color/colorText"
-            android:textSize="20sp"
+            android:textColor="#ffffff"
+            android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/posterImageView"
             app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
@@ -102,7 +106,7 @@
             android:layout_marginTop="16dp"
             android:text="Released: "
             android:textColor="@color/colorText"
-            android:textSize="20sp"
+            android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/posterImageView"
             app:layout_constraintStart_toStartOf="@+id/posterImageView"
@@ -114,16 +118,14 @@
             android:id="@+id/overviewTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="11dp"
             android:padding="10dp"
             android:scrollbars="vertical"
             android:text="Overview"
-            android:textSize="16sp"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
-
+            app:layout_constraintTop_toBottomOf="@id/posterImageView" />
 
 
         <TextView
@@ -132,18 +134,19 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:fontFamily="sans-serif"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif-condensed"
             android:text="Reviews"
             android:textAlignment="center"
             android:textAllCaps="true"
-            android:textSize="24sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="30sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@id/reviewsRecyclerView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/overviewTextView" />
+            app:layout_constraintTop_toBottomOf="@+id/divider2" />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/reviewsRecyclerView"
@@ -159,24 +162,22 @@
             android:id="@+id/divider2"
             android:layout_width="0dp"
             android:layout_height="1dp"
-            android:layout_marginBottom="7dp"
             android:background="?android:attr/listDivider"
-            app:layout_constraintBottom_toTopOf="@+id/textView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/overviewTextView" />
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
         <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="11dp"
-            android:layout_marginTop="8dp"
+            android:layout_height="94dp"
+            android:layout_marginBottom="1dp"
             android:layout_weight="100"
-            app:layout_constraintBottom_toTopOf="@+id/overviewTextView"
+            app:layout_constraintBottom_toTopOf="@+id/textView"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/posterImageView">
+            app:layout_constraintTop_toBottomOf="@+id/overviewTextView">
 
             <Button
                 android:id="@+id/watchTrailerBtn"

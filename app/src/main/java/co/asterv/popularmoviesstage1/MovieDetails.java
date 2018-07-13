@@ -19,19 +19,24 @@ import org.json.*;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import co.asterv.popularmoviesstage1.database.AppDatabase;
 import co.asterv.popularmoviesstage1.model.Movie;
 import co.asterv.popularmoviesstage1.utils.Constants;
 import co.asterv.popularmoviesstage1.utils.JsonUtils;
 
 public class MovieDetails extends AppCompatActivity {
-    RecyclerView mRecyclerView;
-    ReviewAdapter mReviewAdapter;
-    TextView reviewLabel;
-    View divider;
-    Movie movie;
-    ToggleButton favoriteBtn;
+    private RecyclerView mRecyclerView;
+    private ReviewAdapter mReviewAdapter;
+    private TextView reviewLabel;
+    private View divider;
+    private Movie movie;
+    private ToggleButton favoriteBtn;
     private AppDatabase mDb;
+    private String releaseDate;
 
 
     @SuppressLint("ClickableViewAccessibility")
@@ -75,8 +80,7 @@ public class MovieDetails extends AppCompatActivity {
                 favoriteBtn.getTextOff();
 
                 movie.setIsFavoriteMovie (false);
-                AppExecutor.getInstance().diskIO().execute(() -> mDb.movieDao().deleteMovie (movie));
-                Log.e("fav movie after delete?", String.valueOf(movie.getOriginalTitle ()) + String.valueOf(movie.getIsFavoriteMovie ()));
+                AppExecutor.getInstance().diskIO().execute(() -> mDb.movieDao().deleteMovie (movie.getMovieId ()));
             }
         });
         //TOGGLE BUTTON
@@ -140,7 +144,17 @@ public class MovieDetails extends AppCompatActivity {
         overviewTV.setText (movie.getOverview ());
 
         // RELEASE DATE
-        releaseDateTV.setText (movie.getReleaseDate());
+        @SuppressLint("SimpleDateFormat") SimpleDateFormat simpleDateFormat = new SimpleDateFormat(Constants.UNFORMATED_DATE_STRING);
+        @SuppressLint("SimpleDateFormat") SimpleDateFormat DATE_FORMAT = new SimpleDateFormat (Constants.FULL_DATE_FORMAT_STRING);
+
+        try {
+            Date date = simpleDateFormat.parse(movie.getReleaseDate ());
+            releaseDate = DATE_FORMAT.format(date);
+        } catch (ParseException e) {
+            e.printStackTrace ();
+        }
+
+        releaseDateTV.setText (releaseDate);
 
         // TRAILER BUTTON
         new TrailerButtonAsyncTask (trailerBtn).execute(String.valueOf(movie.getMovieId ()), Constants.VIDEO_QUERY_PARAM);
@@ -151,7 +165,7 @@ public class MovieDetails extends AppCompatActivity {
         // INITIAL BUTTON VALUES
         favoriteBtn.setTextOn(Constants.FAVORITED_STRING);
         favoriteBtn.setTextOff(Constants.ADD_TO_FAVORITES_STRING);
-        Log.e("IS FAVORITE MOVIE?!?!", String.valueOf (movie.getIsFavoriteMovie ()));
+
         if(movie.getIsFavoriteMovie ()) {
             favoriteBtn.setChecked (true);
             favoriteBtn.setText(Constants.FAVORITED_STRING);
