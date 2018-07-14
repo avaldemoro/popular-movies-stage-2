@@ -13,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.*;
@@ -32,6 +33,9 @@ import co.asterv.popularmoviesstage1.utils.JsonUtils;
 
 public class MovieDetails extends AppCompatActivity {
     private RecyclerView mRecyclerView;
+    private ReviewAdapter mReviewAdapter;
+    private TextView reviewLabel;
+    private View divider;
     private Movie movie;
     private ToggleButton favoriteBtn;
     private AppDatabase mDb;
@@ -73,6 +77,8 @@ public class MovieDetails extends AppCompatActivity {
                         mDb.movieDao ().deleteMovie (movie.getMovieId ())));
             }
         });
+
+
     }
 
     @Override
@@ -173,21 +179,24 @@ public class MovieDetails extends AppCompatActivity {
 
                 JSONObject root = new JSONObject(movieSearchResults);
                 JSONArray resultsArray = root.getJSONArray (Constants.RESULTS_QUERY_PARAM);
-                movies = new Movie[resultsArray.length ()];
 
-                for (int i = 0; i < resultsArray.length(); i++) {
-                    // Initialize each object before it can be used
-                    movies[i] = new Movie();
+                if (resultsArray.length () == 0) {
+                    trailerKey = null;
+                } else {
+                    movies = new Movie[resultsArray.length ()];
+                    for (int i = 0; i < resultsArray.length(); i++) {
+                        // Initialize each object before it can be used
+                        movies[i] = new Movie();
 
-                    // Object contains all tags we're looking for
-                    JSONObject movieInfo = resultsArray.getJSONObject(i);
+                        // Object contains all tags we're looking for
+                        JSONObject movieInfo = resultsArray.getJSONObject(i);
 
-                    // Store data in movie object
-                    movies[i].setTrailerPath(movieInfo.getString(Constants.VIDEO_TRAILER_KEY_PARAM));
+                        // Store data in movie object
+                        movies[i].setTrailerPath(movieInfo.getString(Constants.VIDEO_TRAILER_KEY_PARAM));
+                    }
+                    // Returns only the first trailer from the results array, since there can be multiple trailers
+                    return movies[0].getTrailerPath();
                 }
-                // Returns only the first trailer from the results array, since there can be multiple trailers
-                return movies[0].getTrailerPath();
-
             } catch (MalformedURLException e) {
                 e.printStackTrace ();
             } catch (IOException e) {
@@ -198,10 +207,16 @@ public class MovieDetails extends AppCompatActivity {
             return trailerKey;
         }
 
+        @SuppressLint("WrongConstant")
         protected void onPostExecute(String temp) {
             button.setOnClickListener((View v) -> {
-                watchYoutubeVideo (getApplicationContext (), temp);
+                if (temp == null) {
+                    Toast.makeText(getApplicationContext(), Constants.NO_TRAILERS, Constants.TOAST_DURATION).show();
+                } else {
+                    watchYoutubeVideo (getApplicationContext (), temp);
+                }
             });
+
         }
     }
 
@@ -233,11 +248,11 @@ public class MovieDetails extends AppCompatActivity {
         }
         protected void onPostExecute(Movie[] movies) {
             // specify an adapter
-            ReviewAdapter mReviewAdapter = new ReviewAdapter (movies, getApplicationContext ());
+            mReviewAdapter = new ReviewAdapter(movies, getApplicationContext ());
             if(mReviewAdapter.getItemCount () == -1) {
                 // If there's no reviews, make the label and divider for the reviews visibility to none
-                TextView reviewLabel = findViewById (R.id.textView);
-                View divider = findViewById (R.id.divider2);
+                reviewLabel = findViewById (R.id.textView);
+                divider = findViewById (R.id.divider2);
                 reviewLabel.setVisibility (TextView.GONE);
                 divider.setVisibility (View.GONE);
             } else {

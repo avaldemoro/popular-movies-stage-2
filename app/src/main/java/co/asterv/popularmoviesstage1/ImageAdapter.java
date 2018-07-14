@@ -75,10 +75,6 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> 
         return mMovies.length;
     }
 
-    public static Movie[] getMovies() {
-        return mMovies;
-    }
-
     public void setMovies(Movie[] movies) {
         mMovies = movies;
     }

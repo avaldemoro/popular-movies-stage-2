@@ -19,6 +19,7 @@ public class Constants {
 
     /* ERROR MESSAGES */
     public final static String NO_INTERNET_TEXT = "Oh no! No internet connection.";
+    public final static String NO_TRAILERS = "Sorry, no trailers here.";
 
     /* DATABASE API URLS */
     final static String API_KEY = BuildConfig.API_KEY;
