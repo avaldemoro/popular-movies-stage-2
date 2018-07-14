@@ -5,10 +5,16 @@ import co.asterv.popularmoviesstage1.utils.Constants;
 import co.asterv.popularmoviesstage1.utils.JsonUtils;
 import co.asterv.popularmoviesstage1.model.Movie;
 import android.annotation.SuppressLint;
+import android.arch.lifecycle.LiveData;
+import android.arch.lifecycle.Observer;
+import android.arch.lifecycle.ViewModelProviders;
 import android.os.AsyncTask;
+import android.os.Parcelable;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.*;
+import android.util.Log;
 import android.view.*;
 import android.widget.Toast;
 import org.json.*;
@@ -23,6 +29,7 @@ public class MainActivity extends AppCompatActivity{
     private MenuItem menuItem;
     private Movie[] movies;
     private ImageAdapter mImageAdapter;
+    private Parcelable mListState;
 
     @SuppressLint({"WrongConstant", "ResourceType"})
     @Override
@@ -50,20 +57,39 @@ public class MainActivity extends AppCompatActivity{
         }
     }
 
-    @SuppressLint("ResourceType")
+    /***
+     * Thanks to https://stackoverflow.com/questions/28236390/recyclerview-store-restore-state-between-activities
+     * for the code to store/restore RecyclerView state between activities
+     * ***/
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState (outState);
 
         outState.putInt("OPTION", selectedItem);
+        // Save list state
+        mListState = mLayoutManager.onSaveInstanceState();
+        outState.putParcelable("LIST_STATE_KEY", mListState);
     }
 
     @Override
     protected void onRestoreInstanceState(Bundle outState) {
         selectedItem = outState.getInt ("OPTION");
-    }
-    /*** MENU METHODS ***/
 
+        // Retrieve list state and list/item positions
+        if(outState != null)
+            mListState = outState.getParcelable("LIST_STATE_KEY");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        if (mListState != null) {
+            mLayoutManager.onRestoreInstanceState(mListState);
+        }
+    }
+
+    /*** MENU METHODS ***/
     //Attempt to try and save selected menu item on screen rotation
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -106,23 +132,19 @@ public class MainActivity extends AppCompatActivity{
         if (id == R.id.favorite_movie_setting){
             selectedItem = id;
             item.setVisible (true);
-            retrieveMovies (); // Favorite Movies
+            setUpViewModel (); // Favorite Movies
             return true;
         }
 
         return super.onOptionsItemSelected (item);
     }
 
-    public void retrieveMovies() {
-        AppExecutor.getInstance ().diskIO ().execute (() -> runOnUiThread(new Runnable() {
-            final Movie[] movies = mDb.movieDao ().loadAllMovies ();
-
-            @Override
-            public void run() {
-                mImageAdapter.notifyDataSetChanged ();
-                mImageAdapter.setMovies (movies);
-            }
-        }));
+    public void setUpViewModel() {
+        MainViewModel viewModel = ViewModelProviders.of(this).get(MainViewModel.class);
+        viewModel.getMovies ().observe (this, (Movie[] movies1) -> {
+            mImageAdapter.notifyDataSetChanged ();
+            mImageAdapter.setMovies (movies1);
+        });
     }
 
     /*** METHOD TO MAKE STRING OF MOVIE DATA TO AN ARRAY OF MOVIE OBJECTS ***/

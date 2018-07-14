@@ -1,16 +1,18 @@
 package co.asterv.popularmoviesstage1;
 
 import android.annotation.SuppressLint;
+import android.arch.lifecycle.Observer;
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.*;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.support.annotation.Nullable;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.*;
@@ -30,14 +32,10 @@ import co.asterv.popularmoviesstage1.utils.JsonUtils;
 
 public class MovieDetails extends AppCompatActivity {
     private RecyclerView mRecyclerView;
-    private ReviewAdapter mReviewAdapter;
-    private TextView reviewLabel;
-    private View divider;
     private Movie movie;
     private ToggleButton favoriteBtn;
     private AppDatabase mDb;
     private String releaseDate;
-
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
@@ -56,35 +54,25 @@ public class MovieDetails extends AppCompatActivity {
         movie = intent.getParcelableExtra("movie");
         mDb = AppDatabase.getInstance (getApplicationContext ());
 
-        // All movies saved to phone are "Favorite movies"
-        final Movie[] favoriteMovies = mDb.movieDao ().loadAllMovies ();
-
-        // So, if the current movieId matches any one of the movies in favoriteMovies
-        // set isFavoriteMovie to true
-        for(int i = 0; i < favoriteMovies.length; i++) {
-            if (movie.getMovieId () == favoriteMovies[i].getMovieId ()) {
-                movie.setIsFavoriteMovie (true);
-            }
-        }
-
         setupDetailsUI (movie);
 
-        // TOGGLE TOGGLE TOGGLE
-        favoriteBtn.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            if (isChecked) {
-                // The toggle is enabled
+        setUpFavoriteMovieButton ();
 
+        // When toggle is changed on/off
+        favoriteBtn.setOnCheckedChangeListener((CompoundButton buttonView, boolean isChecked) -> {
+            if (isChecked) {
+                // Toggle is Enabled
+                favoriteBtn.getTextOn ();
+                onFavoriteButtonClicked ();
             } else {
-                // The toggle is disabled
+                // Toggle is disabled
                 favoriteBtn.setTextColor (Color.parseColor("#000000"));
                 favoriteBtn.getTextOff();
 
-                movie.setIsFavoriteMovie (false);
-                AppExecutor.getInstance().diskIO().execute(() -> mDb.movieDao().deleteMovie (movie.getMovieId ()));
+                AppExecutor.getInstance ().diskIO ().execute (() -> runOnUiThread(() ->
+                        mDb.movieDao ().deleteMovie (movie.getMovieId ())));
             }
         });
-        //TOGGLE BUTTON
-        favoriteBtn.setOnClickListener(v -> onFavoriteButtonClicked ());
     }
 
     @Override
@@ -165,16 +153,6 @@ public class MovieDetails extends AppCompatActivity {
         // INITIAL BUTTON VALUES
         favoriteBtn.setTextOn(Constants.FAVORITED_STRING);
         favoriteBtn.setTextOff(Constants.ADD_TO_FAVORITES_STRING);
-
-        if(movie.getIsFavoriteMovie ()) {
-            favoriteBtn.setChecked (true);
-            favoriteBtn.setText(Constants.FAVORITED_STRING);
-            favoriteBtn.setTextColor (Color.parseColor("#b5001e"));
-        } else {
-            favoriteBtn.setTextColor (Color.parseColor("#000000"));
-            favoriteBtn.setChecked (false);
-            favoriteBtn.setText(Constants.ADD_TO_FAVORITES_STRING);
-        }
     }
 
     /*** ASYNC TASK FOR THE "WATCH TRAILER" BUTTON ***/
@@ -255,11 +233,11 @@ public class MovieDetails extends AppCompatActivity {
         }
         protected void onPostExecute(Movie[] movies) {
             // specify an adapter
-            mReviewAdapter = new ReviewAdapter(movies, getApplicationContext ());
+            ReviewAdapter mReviewAdapter = new ReviewAdapter (movies, getApplicationContext ());
             if(mReviewAdapter.getItemCount () == -1) {
                 // If there's no reviews, make the label and divider for the reviews visibility to none
-                reviewLabel = findViewById (R.id.textView);
-                divider = findViewById (R.id.divider2);
+                TextView reviewLabel = findViewById (R.id.textView);
+                View divider = findViewById (R.id.divider2);
                 reviewLabel.setVisibility (TextView.GONE);
                 divider.setVisibility (View.GONE);
             } else {
@@ -293,11 +271,34 @@ public class MovieDetails extends AppCompatActivity {
     /*** FAVORITE MOVIE BUTTON IS CALLED WHEN "ADD TO FAVORITES" BUTTON IS CLICKED***/
     public void onFavoriteButtonClicked() {
         final Movie movie = getIntent().getExtras().getParcelable ( "movie");
-        AppExecutor.getInstance ().diskIO ().execute (() -> {
-            runOnUiThread (() -> {
-                mDb.movieDao ().insertMovie (movie);
-                //finish ();
-            });
+        AppExecutor.getInstance ().diskIO ().execute (() -> mDb.movieDao ().insertMovie (movie));
+    }
+
+    private void setUpFavoriteMovieButton () {
+        MovieDetailsViewModelFactory factory =
+                new MovieDetailsViewModelFactory (mDb, movie.getMovieId ());
+        final MovieDetailsViewModel viewModel =
+                ViewModelProviders.of(this, factory).get(MovieDetailsViewModel.class);
+
+        viewModel.getMovie ().observe (this, new Observer<Movie> () {
+            @Override
+            public void onChanged(@Nullable Movie movieInDb) {
+                viewModel.getMovie ().removeObserver (this);
+
+                if (movieInDb == null) {
+                    favoriteBtn.setTextColor (Color.parseColor("#000000"));
+                    favoriteBtn.setChecked (false);
+                    favoriteBtn.getTextOff();
+                } else if ((movie.getMovieId () == movieInDb.getMovieId ()) && !favoriteBtn.isChecked ()){
+                    favoriteBtn.setChecked (true);
+                    favoriteBtn.setText(Constants.FAVORITED_STRING);
+                    favoriteBtn.setTextColor (Color.parseColor("#b5001e"));
+                } else {
+                    favoriteBtn.setTextColor (Color.parseColor("#000000"));
+                    favoriteBtn.setChecked (false);
+                    favoriteBtn.getTextOff();
+                }
+            }
         });
     }
 }

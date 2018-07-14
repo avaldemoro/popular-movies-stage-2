@@ -22,7 +22,7 @@ public class Movie implements Parcelable{
     private String reviewContents;
     private String reviewUrl;
     @Ignore
-    private boolean isFavoriteMovie;
+    private boolean isFavoriteMovie = false;
 
     public Movie() { }
 

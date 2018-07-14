@@ -11,7 +11,7 @@ import com.squareup.picasso.*;
 
 
 public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> {
-    private Movie[] mMovies;
+    private static Movie[] mMovies;
     private Context mContext;
 
     public ImageAdapter(Context mContext, Movie[] mMovies) {
@@ -75,7 +75,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> 
         return mMovies.length;
     }
 
-    public Movie[] getMovies() {
+    public static Movie[] getMovies() {
         return mMovies;
     }
 
