@@ -249,6 +249,7 @@ public class MovieDetails extends AppCompatActivity {
         protected void onPostExecute(Movie[] movies) {
             // specify an adapter
             mReviewAdapter = new ReviewAdapter(movies, getApplicationContext ());
+
             if(mReviewAdapter.getItemCount () == -1) {
                 // If there's no reviews, make the label and divider for the reviews visibility to none
                 reviewLabel = findViewById (R.id.textView);
@@ -257,6 +258,7 @@ public class MovieDetails extends AppCompatActivity {
                 divider.setVisibility (View.GONE);
             } else {
                 mRecyclerView.setAdapter(mReviewAdapter);
+                mRecyclerView.setNestedScrollingEnabled (false);
             }
 
         }

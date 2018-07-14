@@ -112,7 +112,7 @@
         <TextView
             android:id="@+id/overviewTextView"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_marginEnd="@dimen/paddingSmall"
             android:layout_marginStart="@dimen/paddingSmall"
             android:layout_marginTop="@dimen/paddingSmall"
@@ -120,6 +120,7 @@
             android:scrollbars="vertical"
             android:text="Overview"
             android:textSize="@dimen/h5"
+            app:layout_constraintBottom_toTopOf="@id/linearLayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/posterImageView"
@@ -150,6 +151,8 @@
             android:id="@+id/reviewsRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:isScrollContainer="false"
+
             android:layout_marginTop="@dimen/paddingSmall"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
@@ -161,13 +164,11 @@
             android:layout_width="0dp"
             android:layout_height="1dp"
             android:layout_marginBottom="@dimen/paddingSmall"
-            android:layout_marginTop="@dimen/paddingSmall"
             android:background="?android:attr/listDivider"
             app:layout_constraintBottom_toTopOf="@+id/textView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/posterImageView" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <LinearLayout
             android:id="@+id/linearLayout"
@@ -177,6 +178,7 @@
             android:layout_marginTop="@dimen/paddingSmall"
             android:layout_weight="100"
             android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@+id/posterImageView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/posterImageView"
